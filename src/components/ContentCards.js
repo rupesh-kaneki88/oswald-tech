@@ -12,7 +12,7 @@ const ContentCards = () => {
       title: 'Network',
       description: '(Wired | Wireless | Mobile ) Assessment | Audit with Optimization.',
       action: 'Try service',
-      bgImage: '/network.jpg'
+      bgImage: './network.jpg'
     },
     {
     //   type: 'VIDEO',
@@ -20,7 +20,7 @@ const ContentCards = () => {
       title: 'Transform',
       description: 'Transform to Sustainable IT infrastructure.',
       action: 'Try service',
-      bgImage: '/transform.jpg'
+      bgImage: './transform.jpg'
     },
     {
     //   type: 'RESEARCH REPORT',
@@ -28,7 +28,7 @@ const ContentCards = () => {
       title: `Sercurity`,
       description: 'Secure Digital Transformation through Process Automation',
       action: 'Try service',
-      bgImage: '/security.jpg'
+      bgImage: './security.jpg'
     },
     {
     //   type: 'ARTICLE',
@@ -36,7 +36,7 @@ const ContentCards = () => {
       title: 'Artificial Intelligence',
       description: 'Secure AI insertion for Network Transformation',
       action: 'Try service',
-      bgImage: '/AI.jpg'
+      bgImage: './AI.jpg'
     }
   ];
 

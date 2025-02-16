@@ -9,12 +9,12 @@ const HeroSection = () => {
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
 
   const videos = [
-    '/art3A.mp4',
-    '/art5.mp4',
-    '/art10.mp4',
-    '/art7.mp4',
-    '/art8.mp4',
-    '/art9.mp4'
+    './art3A.mp4',
+    './art5.mp4',
+    './art10.mp4',
+    './art7.mp4',
+    './art8.mp4',
+    './art9.mp4'
   ];
 
   const words = ['Challenging', 'Exploring', 'Discovering', 'Innovating'];
