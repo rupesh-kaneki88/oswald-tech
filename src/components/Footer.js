@@ -50,7 +50,7 @@ const Footer = () => {
           <div className="border-t pt-8">
             <div className="flex flex-col md:flex-row justify-between items-center gap-4">
               <p className="text-sm text-gray-600">
-                © 2025 General Dynamics Information Technology, Inc., a General Dynamics Company.
+                © 2025 Osvan Technologies. All rights reserved.
               </p>
               <div className="flex flex-wrap justify-center gap-4 text-sm text-gray-600">
                 <a href="#" className="hover:text-gray-900">Privacy Policy</a>
