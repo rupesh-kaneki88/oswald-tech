@@ -92,6 +92,7 @@ const Services = () => {
         <motion.video
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
+          src='./Services.mp4'
           transition={{ duration: 1 }}
           className="absolute top-0 left-0 w-full h-full object-cover"
           autoPlay
@@ -99,7 +100,6 @@ const Services = () => {
           playsInline
           loop
         >
-          <source src="./Services.mp4" type="video/mp4" />
         </motion.video>
 
         <Navbar />
