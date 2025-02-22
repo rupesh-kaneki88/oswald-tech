@@ -12,7 +12,13 @@ export default {
         foreground: "var(--foreground)",
       },
       fontFamily: {
-        'ibm-plex': ['IBM Plex Sans', 'sans-serif'],
+        'ibmplex': ['IBM Plex Sans', 'sans-serif'],
+      },
+      fontFamily: {
+        'sans': ['Montserrat'],
+      },
+      fontFamily: {
+        'quicksand': ['Quicksand'],
       },
     },
   },

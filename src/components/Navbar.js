@@ -8,7 +8,7 @@ function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const menuItems = [
-    { name: 'Capabilities', href: '#capabilities' },
+    { name: 'Services', href: '/Services' },
     { name: 'Industries', href: '#industries' },
     { name: 'About', href: '#about' },
     { name: 'Contact', href: '#contact' }
@@ -32,13 +32,13 @@ function Navbar() {
   );
 
   return (
-    <nav className="sticky top-0 w-full z-50 bg-transparent">
+    <nav className="sticky top-0 w-full z-50 bg-transparent font-sans">
       <div className="max-w-[1400px] mx-auto px-8 lg:px-16">
         <div className="flex justify-between items-center py-6">
           {/* Logo */}
           <motion.a
             href="/"
-            className="text-white text-xl font-bold font-ibm-plex"
+            className="text-white text-xl font-bold font-sans"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             aria-label="Home"

@@ -1,7 +1,9 @@
 import ContentCards from "@/components/ContentCards";
 import HeroSection from "@/components/HeroSection";
-import Footer from "@/components/Footer";
+
 import NewsSlider from "@/components/NewsSlider";
+import ScrollableDetails from "@/components/ScrollableDetails";
+import ReviewList from "@/components/ReviewList";
 
 export default function Home() {
   return (
@@ -13,10 +15,12 @@ export default function Home() {
     // </div>
     <main>
       <HeroSection/>
+      <ScrollableDetails/>
       <ContentCards/>
+      <ReviewList />
       <NewsSlider/>
 
-      <Footer/>
+      {/* <Footer/> */}
     </main>
   );
 }
