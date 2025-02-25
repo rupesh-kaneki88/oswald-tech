@@ -117,13 +117,13 @@ const Services = () => {
               transition={{ duration: 0.8, delay: 0.5 }}
               className="text-left p-4 md:p-8 lg:p-16"
             >
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-white mb-6">
-                Services
+              <h1 className="text-xs md:text-base lg:text-base font-semibold text-white lg:mb-4">
+                SERVICES
               </h1>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-thin text-white mb-6">
+              <h2 className="text-3xl md:text-4xl lg:text-6xl font-base text-white mb-6">
                 Empowering Your Business with Comprehensive IT Solutions
               </h2>
-              <p className="text-xl md:text-2xl font-thin text-white max-w-3xl">
+              <p className="text-l md:text-2xl font-thin text-white max-w-3xl">
                 We provide essential services to optimize your technology, from network support and cloud services to security and IT consulting, ensuring your systems run efficiently and securely.
               </p>
             </motion.div>

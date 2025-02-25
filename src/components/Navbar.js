@@ -10,7 +10,7 @@ function Navbar() {
   const menuItems = [
     { name: 'Services', href: '/Services' },
     { name: 'Industries', href: '#industries' },
-    { name: 'About', href: '#about' },
+    { name: 'About', href: '/About' },
     { name: 'Contact', href: '#contact' }
   ];
 
