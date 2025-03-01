@@ -59,8 +59,8 @@ const About = () => {
             transition={{ duration: 1 }}  // Add this from Services
             preload='auto'
         >
-            <source src="./About.webm" type="video/webm" />
-            <source src="./About.mp4" type="video/mp4" />
+            <source src="/About.webm" type="video/webm" />
+            <source src="/About.mp4" type="video/mp4" />
             Your browser does not support the video tag.
         </motion.video>
   

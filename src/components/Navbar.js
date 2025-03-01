@@ -8,9 +8,9 @@ function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const menuItems = [
-    { name: 'Services', href: '/Services' },
+    { name: 'Services', href: '/services' },
     { name: 'Industries', href: '#industries' },
-    { name: 'About', href: '/About' },
+    { name: 'About', href: '/about' },
     { name: 'Contact', href: '#contact' }
   ];
 
