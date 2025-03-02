@@ -211,7 +211,7 @@ export default function ServiceDetails({ serviceId }) {
               </div>
               <div className="flex justify-between">
                 <span>Amount:</span>
-                <span className="font-medium">₹{service.price}</span>
+                <span className="font-medium">${service.price}</span>
               </div>
             </div>
             

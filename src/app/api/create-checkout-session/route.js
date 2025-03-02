@@ -30,8 +30,8 @@ export async function POST(request) {
         },
       ],
       mode: 'payment',
-    //   success_url: `${request.headers.get('origin')}/payment/success?session_id={CHECKOUT_SESSION_ID}`,
-        success_url: `${request.headers.get('origin')}/payment/success?session_id=${session.id}`,
+      success_url: `${request.headers.get('origin')}/payment/success?session_id={CHECKOUT_SESSION_ID}`,
+        // success_url: `${request.headers.get('origin')}/payment/success?session_id=${session.id}`,
         cancel_url: `${request.headers.get('origin')}/payment/cancel`,
     });
 
