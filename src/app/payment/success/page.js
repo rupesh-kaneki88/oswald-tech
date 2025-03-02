@@ -1,21 +1,18 @@
-// app/payment/success/page.js
-'use client'
+'use client';
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, Suspense } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import { CheckCircle } from 'lucide-react';
 
-export default function PaymentSuccessPage() {
-  const searchParams = useSearchParams();
+function PaymentSuccessPageContent() {
+  const searchParams = useSearchParams(); // ✅ This is now inside <Suspense>
   const sessionId = searchParams.get('session_id');
   const [orderDetails, setOrderDetails] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // In a real application, you would verify the payment with Stripe
-    // For now, we'll just simulate loading order details
     const timer = setTimeout(() => {
       setOrderDetails({
         id: 'ORD' + Math.floor(Math.random() * 1000000),
@@ -96,5 +93,13 @@ export default function PaymentSuccessPage() {
         )}
       </motion.div>
     </div>
+  );
+}
+
+export default function PaymentSuccessPage() {
+  return (
+    <Suspense fallback={<div className="text-center p-4">Loading...</div>}>
+      <PaymentSuccessPageContent />
+    </Suspense>
   );
 }
