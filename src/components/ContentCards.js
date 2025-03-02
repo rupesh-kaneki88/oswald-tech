@@ -3,6 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FileText, Play, Newspaper } from 'lucide-react';
+import Link from 'next/link';
 
 const ContentCards = () => {
   const cards = [
@@ -84,22 +85,25 @@ const ContentCards = () => {
                   </p>
                 </div>
                 
-                {/* Action Link */}
-                <motion.div
-                  className="inline-flex items-center gap-2"
-                  variants={{
-                    hover: { x: 10 },
-                    initial: { x: 0 }
-                  }}
-                >
-                  <span className="text-sm font-medium">{card.action}</span>
-                  <motion.span variants={{
-                    hover: { x: 5 },
-                    initial: { x: 0 }
-                  }}>
-                    →
-                  </motion.span>
-                </motion.div>
+                <Link href={'/services'} passHref>
+                  {/* Action Link */}
+                  <motion.div
+                    className="inline-flex items-center gap-2"
+                    variants={{
+                      hover: { x: 10 },
+                      initial: { x: 0 }
+                    }}
+                  >
+                    <span className="text-sm font-medium">{card.action}</span>
+                    <motion.span variants={{
+                      hover: { x: 5 },
+                      initial: { x: 0 }
+                    }}>
+                      →
+                    </motion.span>
+                  </motion.div>
+                
+                </Link>
               </div>
             </motion.div>
           ))}

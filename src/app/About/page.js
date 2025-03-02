@@ -189,7 +189,7 @@ const About = () => {
                 </h2>
 
                 <div className='flex items-center mt-4 text-white'>
-                    <Link href="/Contact">
+                    <Link href="/contact">
                         <span className='text-3xl sm:text-4xl md:text-5xl font-bold underline mr-2'>Connect</span>
                     </Link>
                     <h2 className='text-3xl sm:text-4xl md:text-5xl'>with us</h2>

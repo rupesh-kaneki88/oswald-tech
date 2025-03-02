@@ -14,22 +14,23 @@ const Footer = () => {
               <p className="text-gray-600">Bringing Advanced IT Solutions within Your Reach.</p>
             </div>
             
-            {/* Quick Links */}
+            {/* Services */}  
             <div>
-              <h3 className="font-semibold text-gray-800 mb-4">Company</h3>
+              <h3 className="font-semibold text-gray-800 mb-4">Services</h3>
               <ul className="space-y-3">
-                <li><a href="#" className="text-gray-600 hover:text-gray-900">Capabilities</a></li>
-                <li><a href="#" className="text-gray-600 hover:text-gray-900">Industries</a></li>
-                <li><a href="#" className="text-gray-600 hover:text-gray-900">Perspectives</a></li>
+                <li><a href="/services/project-management" className="text-gray-600 hover:text-gray-900">Projet Management</a></li>
+                <li><a href="/services/network-support-and-maintenance" className="text-gray-600 hover:text-gray-900">Network support & Maintenance</a></li>
+                <li><a href="/services/software-development" className="text-gray-600 hover:text-gray-900">Software Development</a></li>
+                <li><a href="/services/cloud-service-and-data-backup" className="text-gray-600 hover:text-gray-900">Cloud service & Data backup</a></li>
               </ul>
             </div>
+
             
             <div>
               <h3 className="font-semibold text-gray-800 mb-4">Information</h3>
               <ul className="space-y-3">
-                <li><a href="#" className="text-gray-600 hover:text-gray-900">Careers</a></li>
-                <li><a href="#" className="text-gray-600 hover:text-gray-900">About Osvan Tech</a></li>
-                <li><a href="#" className="text-gray-600 hover:text-gray-900">Contact Us</a></li>
+                <li><a href="/about" className="text-gray-600 hover:text-gray-900">About Osvan Tech</a></li>
+                <li><a href="/contact" className="text-gray-600 hover:text-gray-900">Contact Us</a></li>
               </ul>
             </div>
             

@@ -8,10 +8,10 @@ function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const menuItems = [
+    { name: 'Home', href: '/' },
     { name: 'Services', href: '/services' },
-    { name: 'Industries', href: '#industries' },
     { name: 'About', href: '/about' },
-    { name: 'Contact', href: '#contact' }
+    { name: 'Contact', href: '/contact' }
   ];
 
   const NavLink = ({ href, children }) => (

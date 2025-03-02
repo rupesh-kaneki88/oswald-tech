@@ -1,29 +1,61 @@
 'use client'
 
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Navbar from './Navbar';
+import { useRouter } from 'next/navigation';
 
 const HeroSection = () => {
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
+  const videoRef = useRef(null);
+  const router = useRouter();
 
   const videos = [
-    './art3A.mp4',
-    './art5.mp4',
-    './art10.mp4',
-    './art7.mp4',
-    './art8.mp4',
-    './art9.mp4'
+    { webm: '/art3A.webm', mp4: '/art3A.mp4' },
+    { webm: '/art5.webm', mp4: '/art5.mp4' },
+    { webm: '/art10.webm', mp4: '/art10.mp4' },
+    { webm: '/art7.webm', mp4: '/art7.mp4' },
+    { webm: '/art8.webm', mp4: '/art8.mp4' },
+    { webm: '/art9.webm', mp4: '/art9.mp4' },
   ];
 
   const words = ['Challenging', 'Exploring', 'Discovering', 'Innovating'];
+
+  // Preload all videos (hidden in DOM)
+  useEffect(() => {
+    videos.forEach(({ webm, mp4 }) => {
+      const video = document.createElement('video');
+      video.src = webm || mp4;
+      video.preload = 'auto';
+      video.style.display = 'none';
+      document.body.appendChild(video);
+    });
+
+    return () => {
+      document.querySelectorAll('video[preload="auto"]').forEach((video) => video.remove());
+    };
+  }, []);
+
+  // Change video source dynamically for smooth preloaded playback
+  useEffect(() => {
+    if (videoRef.current) {
+      const video = videos[currentVideoIndex]; // Get the correct video object
+      videoRef.current.src = video.webm || video.mp4; // Set src properly
+      videoRef.current.load();
+      videoRef.current.play();
+    }
+  }, [currentVideoIndex]);
 
   // Memoized transition handlers
   const handleVideoTransition = useCallback(() => {
     setCurrentVideoIndex((prevIndex) => 
       prevIndex === videos.length - 1 ? 0 : prevIndex + 1
     );
+  }, [videos.length]);
+
+  const handleVideoEnd = useCallback(() => {
+    setCurrentVideoIndex((prevIndex) => (prevIndex + 1) % videos.length);
   }, [videos.length]);
 
   const handleWordTransition = useCallback(() => {
@@ -55,24 +87,33 @@ const HeroSection = () => {
 
       {/* Video Background */}
       <AnimatePresence mode="wait">
-        {videos.map((video, index) => (
+        {videos.map((video, index) =>
           currentVideoIndex === index && (
-            <motion.video
-              key={video}
-              src={video}
+            <motion.div
+              key={video.webm} // Use video.webm as a key
+              className="absolute top-0 left-0 w-full h-full bg-black" // Ensure black background
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 1 }}
-              className="absolute top-0 left-0 w-full h-full object-cover"
-              autoPlay
-              muted
-              playsInline
-              onEnded={handleVideoTransition}
-            />
+              transition={{ duration: 0 }}
+            >
+              <motion.video
+                className="w-full h-full object-cover"
+                autoPlay
+                muted
+                playsInline
+                onEnded={handleVideoEnd}
+                preload="auto"
+              >
+                <source src={videos[currentVideoIndex].webm} type="video/webm" />
+                <source src={videos[currentVideoIndex].mp4} type="video/mp4" />
+                Your browser does not support the video tag.
+              </motion.video>
+            </motion.div>
           )
-        ))}
+        )}
       </AnimatePresence>
+
         {/* Navigation */}
         <Navbar />
 
@@ -123,7 +164,10 @@ const HeroSection = () => {
               Transformative tech and expert consulting to drive your business forward.
             </motion.p>
 
-            <button className="border-2 border-white px-6 md:px-8 py-3 hover:bg-white hover:text-black transition-colors relative overflow-hidden group">
+            <button
+              onClick={() => router.push('/services')}
+              className="border-2 border-white px-6 md:px-8 py-3 hover:bg-white hover:text-black transition-colors relative overflow-hidden group"
+            >
               <span className="relative z-10">Explore With Us</span>
             </button>
           </div>

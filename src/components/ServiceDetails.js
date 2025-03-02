@@ -161,8 +161,9 @@ export default function ServiceDetails({ serviceId }) {
             >
               <h3 className="text-xl font-semibold mb-4">Service Package</h3>
               <div className="flex items-end mb-6">
-                <span className="text-3xl font-bold">₹{service.price}</span>
-                <span className="text-gray-500 ml-2">/month</span>
+                <span className="text-3xl font-bold">${service.price}</span>
+                {/* <span className="text-3xl font-bold">₹{service.price}</span> */}
+                <span className="text-gray-500 ml-2">only</span>
               </div>
 
               <div className="space-y-3 mb-8">
@@ -185,7 +186,7 @@ export default function ServiceDetails({ serviceId }) {
               </motion.button>
 
               <p className="text-sm text-gray-500 mt-4 text-center">
-                No long-term contracts. Cancel anytime.
+                One time payment
               </p>
             </motion.div>
           </div>
