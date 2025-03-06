@@ -1,10 +1,13 @@
 'use client'
 
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, Suspense } from 'react';
 import { motion } from 'framer-motion';
 import Navbar from '@/components/Navbar';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
+
+// Loading component for Suspense
+const Loading = () => <div>Loading...</div>;
 
 const PrivacyLegal = () => {
   const privacyRef = useRef(null);
@@ -313,4 +316,11 @@ const PrivacyLegal = () => {
   );
 };
 
-export default PrivacyLegal;
+// Wrap your main component with Suspense
+const PrivacyLegalWithSuspense = () => (
+  <Suspense fallback={<Loading />}>
+    <PrivacyLegal />
+  </Suspense>
+);
+
+export default PrivacyLegalWithSuspense;
