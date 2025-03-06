@@ -63,21 +63,29 @@ const Services = () => {
   return (
     <>
       <div className="relative h-screen w-full bg-white overflow-hidden">
-        <motion.video
+        <motion.div
+          className="absolute top-0 left-0 w-full h-full bg-black" // Ensure black background
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 1 }}
-          className="absolute top-0 left-0 w-full h-full object-cover"
-          autoPlay
-          muted
-          playsInline
-          loop
-          preload='auto'
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0 }}
         >
-          <source src="/Services.webm" type="video/webm" />
-          <source src="/Services.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </motion.video>
+          <motion.video
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1 }}
+            className="absolute top-0 left-0 w-full h-full object-cover"
+            autoPlay
+            muted
+            playsInline
+            loop
+            preload='auto'
+          >
+            <source src="/Services-page.webm" type="video/webm" />
+            <source src="/Services-page.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </motion.video>
+        </motion.div>
 
         <Navbar />
         <div className="absolute inset-0 bg-black/30" />

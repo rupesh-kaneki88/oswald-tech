@@ -54,11 +54,11 @@ const Footer = () => {
                 © 2025 Osvan Technologies. All rights reserved.
               </p>
               <div className="flex flex-wrap justify-center gap-4 text-sm text-gray-600">
-                <a href="#" className="hover:text-gray-900">Privacy Policy</a>
+                <a href="/privacy-legal?section=privacy" className="hover:text-gray-900">Privacy Policy</a>
                 <span>|</span>
-                <a href="#" className="hover:text-gray-900">Legal Terms</a>
-                <span>|</span>
-                <a href="#" className="hover:text-gray-900">Site Map</a>
+                <a href="/privacy-legal?section=terms" className="hover:text-gray-900">Legal Terms</a>
+                {/* <span>|</span>
+                <a href="#" className="hover:text-gray-900">Site Map</a> */}
               </div>
             </div>
           </div>

@@ -185,8 +185,8 @@ const Contact = () => {
                             <div className="flex justify-center">
                               <button
                                   type="submit"
-                                  disabled={true}
-                                  // disabled={isSubmitting}
+                                  // disabled={true}
+                                  disabled={isSubmitting}
                                   className="text-gray-800 border-b-2  hover:border-gray-800 uppercase tracking-wider font-medium py-2 px-4 transition duration-300 ease-in-out disabled:text-gray-400"
                               >
                                   {isSubmitting ? 'Sending...' : 'Send Message'}

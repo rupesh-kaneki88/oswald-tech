@@ -4,6 +4,7 @@ import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import Navbar from '@/components/Navbar';
 import Link from 'next/link';
+import TeamSection from '@/components/TeamSection';
 
 const About = () => {
     const ref = useRef(null);
@@ -107,6 +108,13 @@ const About = () => {
             </div>
 
         </motion.div>
+
+        {/* Team details */}
+        <div
+            className="bg-transparent mx-4 md:mx-16 lg:mx-16 my-12 -mt-8 font-sans relative z-10"
+        >
+            <TeamSection/>
+        </div>
 
         {/* scrolling details */}
         <section className="w-full min-h-screen bg-white lg:py-16 py-8 px-8 lg:px-20">

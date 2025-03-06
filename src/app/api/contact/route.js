@@ -32,6 +32,7 @@ export async function POST(request) {
       from: `"Contact Form" <${process.env.EMAIL_FROM}>`,
       to: process.env.COMPANY_EMAIL,
       subject: `New Contact Form Submission from ${name}`,
+      replyTo: email,
       html: `
         <h1>New Contact Form Submission</h1>
         <p><strong>Name:</strong> ${name}</p>
