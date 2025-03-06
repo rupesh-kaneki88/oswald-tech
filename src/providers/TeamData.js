@@ -69,10 +69,10 @@ export const teamMembers = [
     },
     {
       id: 2,
-      name: "Sharan Hiremath",
+      name: "john doe",
       position: "Coordinator",
       image: "/service3.jpg",
-      bio: "Sharan is a technology visionary with deep expertise in cloud architecture, AI solutions, and mobile technologies. With a background in both research and practical implementation, she drives Osvan's technical strategy and ensures our solutions remain at the cutting edge.",
+      bio: "John is a technology visionary with deep expertise in cloud architecture, AI solutions, and mobile technologies. With a background in both research and practical implementation, he drives Osvan's technical strategy and ensures our solutions remain at the cutting edge.",
       expertise: ["Cloud Architecture", "AI Implementation", "5G Technologies"],
       education: "Master's in Computer Application KLS Gogte Institute of Technology, Belgaum",
       // linkedin: "https://linkedin.com/in/sarahjohnson"
