@@ -55,7 +55,7 @@ export async function POST(request) {
         <p>Here's a copy of your message:</p>
         <p>${message.replace(/\n/g, '<br>')}</p>
         <p>Best regards,</p>
-        <p>The Osvan Technologies Team</p>
+        <p>The Net2AI Technologies Team</p>
       `,
     };
     

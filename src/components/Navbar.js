@@ -12,7 +12,7 @@ function Navbar() {
     { name: 'Services', href: '/services' },
     { name: 'About', href: '/about' },
     { name: 'Contact', href: '/contact' },
-    { name: 'News', href: '/' }
+    { name: 'News', href: '/news' }
   ];
 
   const NavLink = ({ href, children }) => (
@@ -44,7 +44,7 @@ function Navbar() {
             whileTap={{ scale: 0.95 }}
             aria-label="Home"
           >
-            Osvan Technology
+            Net2AI
           </motion.a>
 
           {/* Desktop Navigation */}

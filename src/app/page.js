@@ -15,8 +15,8 @@ export default function Home() {
     // </div>
     <main>
       <HeroSection/>
-      <ScrollableDetails/>
       <ContentCards/>
+      <ScrollableDetails/>
       <ReviewList />
       <NewsSlider/>
 

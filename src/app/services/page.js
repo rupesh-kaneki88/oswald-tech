@@ -29,6 +29,14 @@ const ServiceCard = ({ service, index }) => {
               loading="lazy"
             />
             <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-300" />
+              {/* Description */}
+            <div className="absolute bottom-0 left-0 w-full px-4 py-2">
+              <motion.div
+                className="font-sans text-white text-sm lg:text-xl font-sans transform translate-x-full opacity-0 group-hover:opacity-100 group-hover:translate-x-0 transition-transform duration-500 ease-out"
+              >
+                {service.fullDesc.length > 250 ? `${service.fullDesc.substring(0, 250)}...` : service.fullDesc}
+              </motion.div>
+            </div>
           </div>
   
           {/* Content */}
@@ -36,17 +44,19 @@ const ServiceCard = ({ service, index }) => {
             <h2 className="text-2xl lg:text-3xl font-semibold mb-4 flex items-center gap-2 group-hover:text-blue-600 transition-colors duration-300">
               {service.title}
             </h2>
-            <p className="text-gray-600 text-lg leading-relaxed">
+            {/* <p className="text-gray-600 text-lg leading-relaxed">
               {service.desc.split('.')[0] + '.'}
-            </p>
-            <Link href={`/services/${service.title.toLowerCase().replace(/\s+/g, '-').replace(/&/g, 'and')}`} passHref>
+            </p> */}
+            {/* <Link href={`/services/${service.title.toLowerCase().replace(/\s+/g, '-').replace(/&/g, 'and')}`} passHref> */}
+            <Link href={`/services/${service.id}`} passHref>
               <motion.button
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="mt-6 px-6 py-2 bg-black text-white rounded-md self-start 
-                          hover:bg-blue-600 transition-colors duration-300"
+                className=" py-3 hover:bg-transparent transition-colors relative overflow-hidden group"
               >
-                Explore Service
+                <span className="relative z-10 text-2xl font-thin font-sans">Explore Service</span>
+                <div className="absolute bottom-[8px] left-0 w-0 h-[2px] bg-yellow-400 mx-0 transition-all duration-300 ease-out group-hover:w-full" />
+
               </motion.button>
             </Link>
           </div>
@@ -116,7 +126,7 @@ const Services = () => {
         </div>
       </div>
 
-      <div className="bg-gray-50 py-16">
+      <div className="bg-gray-50 py-4">
         {services.map((service, index) => (
           <ServiceCard key={index} service={service} index={index} />
         ))}

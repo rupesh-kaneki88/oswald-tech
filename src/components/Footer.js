@@ -10,7 +10,7 @@ const Footer = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
             {/* Logo Section */}
             <div>
-              <h2 className="text-2xl font-bold text-gray-900 mb-2">Osvan Technology</h2>
+              <h2 className="text-2xl font-bold text-gray-900 mb-2">Net2AI</h2>
               <p className="text-gray-600">Bringing Advanced IT Solutions within Your Reach.</p>
             </div>
             
@@ -18,10 +18,11 @@ const Footer = () => {
             <div>
               <h3 className="font-semibold text-gray-800 mb-4">Services</h3>
               <ul className="space-y-3">
-                <li><a href="/services/project-management" className="text-gray-600 hover:text-gray-900">Projet Management</a></li>
-                <li><a href="/services/network-support-and-maintenance" className="text-gray-600 hover:text-gray-900">Network support & Maintenance</a></li>
-                <li><a href="/services/software-development" className="text-gray-600 hover:text-gray-900">Software Development</a></li>
-                <li><a href="/services/cloud-service-and-data-backup" className="text-gray-600 hover:text-gray-900">Cloud service & Data backup</a></li>
+                <li><a href="/services/network-assessment-audit-optimization" className="text-gray-600 hover:text-gray-900">Network Assessment Audit Optimization</a></li>
+                <li><a href="/services/sustainable-it-infrastructure" className="text-gray-600 hover:text-gray-900">Sustainable IT Infrastructure</a></li>
+                <li><a href="/services/secure-digital-transformation-process-automation" className="text-gray-600 hover:text-gray-900">Secure Digital Transformation Process Automation</a></li>
+                <li><a href="/services/secure-ai-insertion-network-transformation" className="text-gray-600 hover:text-gray-900">Secure AI Insertion Network Transformation</a></li>
+                <li><a href="/services/on-demand-network-consultancy" className="text-gray-600 hover:text-gray-900">On Demand Network Consultancy</a></li>
               </ul>
             </div>
 
@@ -29,7 +30,7 @@ const Footer = () => {
             <div>
               <h3 className="font-semibold text-gray-800 mb-4">Information</h3>
               <ul className="space-y-3">
-                <li><a href="/about" className="text-gray-600 hover:text-gray-900">About Osvan Tech</a></li>
+                <li><a href="/about" className="text-gray-600 hover:text-gray-900">About Net2AI Technologies</a></li>
                 <li><a href="/contact" className="text-gray-600 hover:text-gray-900">Contact Us</a></li>
               </ul>
             </div>
@@ -51,7 +52,7 @@ const Footer = () => {
           <div className="border-t pt-8">
             <div className="flex flex-col md:flex-row justify-between items-center gap-4">
               <p className="text-sm text-gray-600">
-                © 2025 Osvan Technologies. All rights reserved.
+                © 2025 Net2AI. All rights reserved.
               </p>
               <div className="flex flex-wrap justify-center gap-4 text-sm text-gray-600">
                 <a href="/privacy-legal?section=privacy" className="hover:text-gray-900">Privacy Policy</a>

@@ -86,10 +86,10 @@ const Contact = () => {
                     className="text-left p-4 md:p-8 lg:p-16"
                 >
                     <h1 className="text-xs md:text-base lg:text-base font-semibold text-white lg:mb-4">
-                    Contact
+                      CONTACT
                     </h1>
                     <h2 className="text-3xl md:text-4xl lg:text-6xl font-base text-white mb-6">
-                        Osvan Technologies
+                        Net2AI Technologies
                     </h2>
                     <p className="text-l md:text-2xl font-thin text-white max-w-3xl">
                         Reach Out and Transform Your Business with us.          

@@ -2,49 +2,57 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FileText, Play, Newspaper } from 'lucide-react';
+import { FileText, Play, Newspaper, HandPlatter } from 'lucide-react';
 import Link from 'next/link';
 
 const ContentCards = () => {
   const cards = [
     {
-    //   type: 'RESEARCH REPORT',
-    //   icon: <FileText className="w-6 h-6" />,
-      title: 'Network',
-      description: '(Wired | Wireless | Mobile ) Assessment | Audit with Optimization.',
-      action: 'Try service',
+      type: 'SERVICE',
+      icon: <HandPlatter className="w-6 h-6" />,
+      title: 'Network (Wired | Wireless | Mobile ) Assessment | Audit with Optimization.',
+      description: "Comprehensive assessment and audit of wired, wireless, and mobile networks, with optimization strategies to improve performance and security.",
+      action: 'Explore',
       bgImage: './network.jpg'
     },
     {
-    //   type: 'VIDEO',
-    //   icon: <Play className="w-6 h-6" />,
-      title: 'Transform',
-      description: 'Transform to Sustainable IT infrastructure.',
-      action: 'Try service',
+      type: 'SERVICE',
+      icon: <HandPlatter className="w-6 h-6" />,
+      title: 'Transform to Sustainable IT infrastructure.',
+      description: 'Modernize your IT infrastructure with eco-friendly solutions that enhance efficiency and sustainability.',
+      action: 'Explore',
       bgImage: './transform.jpg'
     },
     {
-    //   type: 'RESEARCH REPORT',
-    //   icon: <FileText className="w-6 h-6" />,
-      title: `Sercurity`,
-      description: 'Secure Digital Transformation through Process Automation',
-      action: 'Try service',
+      type: 'SERVICE',
+      icon: <HandPlatter className="w-6 h-6" />,
+      title: `Secure Digital Transformation through Process Automation`,
+      description: 'Leverage automation to securely transform your digital processes, boosting efficiency and reducing risk.',
+      action: 'Explore',
       bgImage: './security.jpg'
     },
     {
-    //   type: 'ARTICLE',
-    //   icon: <Newspaper className="w-6 h-6" />,
-      title: 'Artificial Intelligence',
-      description: 'Secure AI insertion for Network Transformation',
-      action: 'Try service',
+      type: 'SERVICE',
+      icon: <HandPlatter className="w-6 h-6" />,
+      title: 'Secure AI insertion for Network Transformation',
+      description: 'Integrate AI solutions into your network to enhance performance, security, and scalability.',
+      action: 'Explore',
+      bgImage: './AI.jpg'
+    },
+    {
+      type: 'SERVICE',
+      icon: <HandPlatter className="w-6 h-6" />,
+      title: 'On Demand Digital Network Consultancy Services from Certified Experts',
+      description: 'Access expert digital network consulting services tailored to your needs, available whenever you require them.',
+      action: 'Explore',
       bgImage: './AI.jpg'
     }
   ];
 
   return (
-    <section className="w-full bg-white py-16 px-8 lg:px-16">
+    <section className="w-full bg-white mt-28 px-8 lg:px-16 font-sans">
       <div className="max-w-[1400px] mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
           {cards.map((card, index) => (
             <motion.div
               key={index}
@@ -52,13 +60,13 @@ const ContentCards = () => {
               whileHover="hover"
               initial="initial"
               variants={{
-                hover: { scale: 1.02 },
+                hover: { scale: 1.08 },
                 initial: { scale: 1 }
               }}
             >
               {/* Background Image */}
               <div 
-                className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+                className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110 group-hover:blur"
                 style={{ 
                   backgroundImage: `url(${card.bgImage})`,
                   backgroundColor: 'rgba(0, 0, 0, 0.5)',
@@ -80,7 +88,7 @@ const ContentCards = () => {
                   <h3 className="text-2xl font-light mb-4 leading-tight">
                     {card.title}
                   </h3>
-                  <p className="text-sm text-gray-200 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <p className="text-sm text-gray-200 transform opacity-0 translate-x-full group-hover:opacity-100 group-hover:translate-x-0 transition-transform duration-300 ease-out">
                     {card.description}
                   </p>
                 </div>
@@ -90,8 +98,8 @@ const ContentCards = () => {
                   <motion.div
                     className="inline-flex items-center gap-2"
                     variants={{
-                      hover: { x: 10 },
-                      initial: { x: 0 }
+                      hover: { y: 10 },
+                      initial: { y: 100 }
                     }}
                   >
                     <span className="text-sm font-medium">{card.action}</span>
