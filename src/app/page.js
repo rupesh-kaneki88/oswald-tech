@@ -4,6 +4,7 @@ import HeroSection from "@/components/HeroSection";
 import NewsSlider from "@/components/NewsSlider";
 import ScrollableDetails from "@/components/ScrollableDetails";
 import ReviewList from "@/components/ReviewList";
+import Head from 'next/head';
 
 export default function Home() {
   return (
@@ -13,14 +14,20 @@ export default function Home() {
     //   </main>
       
     // </div>
-    <main>
-      <HeroSection/>
-      <ContentCards/>
-      <ScrollableDetails/>
-      <ReviewList />
-      <NewsSlider/>
+    <>
+      <Head>
+        <title>Net2AI | Innovation Made Accessible</title>
+        <meta name="description" content={`This is the home page`} />
+      </Head>
+      <main>
+        <HeroSection/>
+        <ContentCards/>
+        <ScrollableDetails/>
+        <ReviewList />
+        <NewsSlider/>
 
-      {/* <Footer/> */}
-    </main>
+        {/* <Footer/> */}
+      </main>
+    </>
   );
 }

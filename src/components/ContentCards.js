@@ -13,7 +13,8 @@ const ContentCards = () => {
       title: 'Network (Wired | Wireless | Mobile ) Assessment | Audit with Optimization.',
       description: "Comprehensive assessment and audit of wired, wireless, and mobile networks, with optimization strategies to improve performance and security.",
       action: 'Explore',
-      bgImage: './network.jpg'
+      bgImage: '/network.jpg',
+      link: '/services/network-assessment-audit-optimization'
     },
     {
       type: 'SERVICE',
@@ -21,7 +22,8 @@ const ContentCards = () => {
       title: 'Transform to Sustainable IT infrastructure.',
       description: 'Modernize your IT infrastructure with eco-friendly solutions that enhance efficiency and sustainability.',
       action: 'Explore',
-      bgImage: './transform.jpg'
+      bgImage: '/transform.jpg',
+      link: '/services/sustainable-it-infrastructure'
     },
     {
       type: 'SERVICE',
@@ -29,7 +31,8 @@ const ContentCards = () => {
       title: `Secure Digital Transformation through Process Automation`,
       description: 'Leverage automation to securely transform your digital processes, boosting efficiency and reducing risk.',
       action: 'Explore',
-      bgImage: './security.jpg'
+      bgImage: '/security.jpg',
+      link: '/services/secure-digital-transformation-process-automation'
     },
     {
       type: 'SERVICE',
@@ -37,7 +40,8 @@ const ContentCards = () => {
       title: 'Secure AI insertion for Network Transformation',
       description: 'Integrate AI solutions into your network to enhance performance, security, and scalability.',
       action: 'Explore',
-      bgImage: './AI.jpg'
+      bgImage: '/AI.jpg',
+      link: '/services/secure-ai-insertion-network-transformation'
     },
     {
       type: 'SERVICE',
@@ -45,7 +49,8 @@ const ContentCards = () => {
       title: 'On Demand Digital Network Consultancy Services from Certified Experts',
       description: 'Access expert digital network consulting services tailored to your needs, available whenever you require them.',
       action: 'Explore',
-      bgImage: './AI.jpg'
+      bgImage: '/digi-network.jpg',
+      link: '/services/on-demand-network-consultancy'
     }
   ];
 
@@ -93,7 +98,7 @@ const ContentCards = () => {
                   </p>
                 </div>
                 
-                <Link href={'/services'} passHref>
+                <Link href={card.link} passHref>
                   {/* Action Link */}
                   <motion.div
                     className="inline-flex items-center gap-2"

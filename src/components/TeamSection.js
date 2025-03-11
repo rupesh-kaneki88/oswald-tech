@@ -15,6 +15,17 @@ const TeamSection = () => {
     }
   };
 
+    const [isFaded, setIsFaded] = useState(false);
+  
+    // Handle video end event
+    const handleVideoEnd = () => {
+      setIsFaded(true);
+      // Wait for the fade out effect to finish, then reset and start the video again
+      setTimeout(() => {
+        setIsFaded(false);
+      }, 1000); // The duration of fade-out (1 second in this case)
+    };
+
   return (
     <section className="py-16 bg-gray-50 w-full">
       <div className="container mx-auto px-4 md:px-16 lg:px-28">
@@ -26,7 +37,7 @@ const TeamSection = () => {
         </div>
         <div className="grid md:grid-cols-2 gap-12">
           {/* Left Column: Team Member Photos */}
-          <div className="flex flex-wrap justify-center gap-12">
+          {/* <div className="flex flex-wrap justify-center gap-12">
             {teamMembers.map((member) => (
               <motion.div
                 key={member.id}
@@ -54,7 +65,7 @@ const TeamSection = () => {
           </div>
 
           {/* Right Column: Team Member Details */}
-          <div className="flex flex-col justify-center">
+          {/* <div className="flex flex-col justify-center">
             {selectedMember ? (
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -101,6 +112,52 @@ const TeamSection = () => {
                 Discover the people and thinking behind our business. Together with our clients, we strive to create a safer, smarter world by harnessing the power of deep expertise and advanced technology.
               </motion.p>
             )}
+          </div> */} 
+
+          {/* General data */}
+
+          {/* left column */}
+          <div className="lg:col-span-1">
+              <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true }}
+                className="bg-transparent"
+              >
+                <p className='text-lg md:text-2xl font-light text-gray-900  text-left'>
+                  Our team is driven by experienced leaders with a strong focus on customer success, innovation, and technology solutions. We combine deep technical expertise with strategic vision to deliver results across complex and dynamic environments. Our team's diverse skills cover areas such as project management, cloud technologies, networking, data science, AI, and more. With a commitment to driving growth and profitability, we leverage advanced tools and methodologies to create smarter, safer solutions for our clients.
+                </p>
+              </motion.div>
+          </div>
+
+          {/* right column */}
+          <div className="flex flex-wrap justify-center gap-12">
+               {/* video */}
+                <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 1 }}
+                className="relative"
+                >
+
+                  <motion.video
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: isFaded ? 0 : 1 }}
+                      className="  object-cover"
+                      autoPlay
+                      muted
+                      playsInline
+                      loop
+                      transition={{ duration: 1 }}  // Add this from Services
+                      preload='auto'
+                      onEnded={handleVideoEnd}
+                  >
+                      <source src="/teams.webm" type="video/webm" />
+                      <source src="/teams.mp4" type="video/mp4" />
+                      Your browser does not support the video tag.
+                  </motion.video>
+                </motion.div>
           </div>
         </div>
       </div>

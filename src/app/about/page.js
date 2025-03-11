@@ -5,6 +5,7 @@ import { motion, useInView } from 'framer-motion';
 import Navbar from '@/components/Navbar';
 import Link from 'next/link';
 import TeamSection from '@/components/TeamSection';
+import Head from 'next/head';
 
 const About = () => {
     const ref = useRef(null);
@@ -48,6 +49,10 @@ const About = () => {
 
     return(
         <>
+        <Head>
+            <title>Net2AI | About</title>
+            <meta name="description" content="About Net2AI technologies"/>
+        </Head>
         <div className="relative h-screen w-full bg-white overflow-hidden">
         <motion.video
             initial={{ opacity: 0 }}
@@ -117,7 +122,7 @@ const About = () => {
         </div>
 
         {/* scrolling details */}
-        <section className="w-full min-h-screen bg-white lg:py-16 py-8 px-8 lg:px-20">
+        <section className="w-full min-h-screen bg-white lg:mb-2 px-8 lg:px-20">
             <div className="flex flex-col lg:flex-row lg:flex-row-reverse gap-14 lg:gap-22 md:mx-10 sm:mx-5">
                 {/* Fixed column */}
                 <div className="justify-center items-center flex flex-col text-wrap lg:sticky top-0 max-h-screen lg:p-4 bg-white">
@@ -179,7 +184,6 @@ const About = () => {
             </div>
         </section>
 
-        {/* Connect div */}
         {/* Connect div */}
         <div className='flex w-full bg-white justify-center items-center'>
         <div

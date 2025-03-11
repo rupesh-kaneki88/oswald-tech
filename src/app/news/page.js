@@ -5,6 +5,7 @@ import { motion, useInView } from 'framer-motion';
 import Navbar from '@/components/Navbar';
 import Link from 'next/link';
 import { MapPin, Phone, Mail, Globe } from 'lucide-react';
+import Head from 'next/head';
 
 const News = () => {
   const ref = useRef(null);
@@ -23,6 +24,9 @@ const News = () => {
 
   return(
     <>
+        <Head>
+            <title>Net2AI | News</title>
+        </Head>
         <div className="relative h-[90vh] w-full bg-white overflow-hidden font-sans">
             <img 
             src="/About3.jpg" 

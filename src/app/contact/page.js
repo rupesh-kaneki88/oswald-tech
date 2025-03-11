@@ -5,6 +5,7 @@ import { motion, useInView } from 'framer-motion';
 import Navbar from '@/components/Navbar';
 import Link from 'next/link';
 import { MapPin, Phone, Mail, Globe } from 'lucide-react';
+import Head from 'next/head';
 
 const Contact = () => {
   const ref = useRef(null);
@@ -61,6 +62,10 @@ const Contact = () => {
 
   return (
     <>
+      <Head>
+        <title>Net2AI | Contact Us</title>
+        <meta name="description" content="Contact Net2AI for any inquiries or support."/>
+      </Head>
       {/* Hero Image Section - 60vh */}
 
         <div className="relative h-[90vh] w-full bg-white overflow-hidden font-sans">

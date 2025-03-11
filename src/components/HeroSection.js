@@ -166,10 +166,10 @@ const HeroSection = () => {
             </motion.p>
 
             <button
-              onClick={() => router.push('/services')}
+              onClick={() => router.push('/contact')}
               className=" px-4 md:px-12 py-3 hover:bg-transparent transition-colors relative overflow-hidden group "
             >
-              <span className="relative z-10 text-2xl font-thin font-sans">Explore With Us</span>
+              <span className="relative z-10 text-2xl font-thin font-sans">Connect With Us</span>
               <div className="absolute bottom-[8px] left-0 w-0 h-[2px] bg-yellow-400 mx-12 mr-20 transition-all duration-300 ease-out group-hover:w-full" />
             </button>
           </div>

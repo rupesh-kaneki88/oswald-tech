@@ -6,6 +6,7 @@ import { ArrowUpRight } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Link from 'next/link';
 import ServiceData from '@/providers/ServiceData';
+import Head from 'next/head';
 
 const ServiceCard = ({ service, index }) => {
     const ref = useRef(null);
@@ -72,6 +73,10 @@ const Services = () => {
 
   return (
     <>
+      <Head>
+        <title>Net2AI | Services</title>
+      </Head>
+
       <div className="relative h-screen w-full bg-white overflow-hidden">
         <motion.div
           className="absolute top-0 left-0 w-full h-full bg-black" // Ensure black background

@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Osvan Technology",
-  description: "Osvan tech software service company",
+  title: "Net2AI | Innovation Made Accessible",
+  description: "Net2AI tech software service company",
 };
 
 export default function RootLayout({ children }) {
