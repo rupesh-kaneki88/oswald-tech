@@ -8,7 +8,7 @@ import Link from 'next/link';
 const ContentCards = () => {
   const cards = [
     {
-      type: 'SERVICE',
+      type: 'Get2AI',
       icon: <HandPlatter className="w-6 h-6" />,
       title: 'On Demand Digital Network Consultancy Services from Certified Experts',
       description: 'Access expert digital network consulting services tailored to your needs, available whenever you require them.',
@@ -17,7 +17,7 @@ const ContentCards = () => {
       link: '/services/on-demand-network-consultancy'
     },
     {
-      type: 'SERVICE',
+      type: 'Get2AI',
       icon: <HandPlatter className="w-6 h-6" />,
       title: 'Network (Wired | Wireless | Mobile ) Assessment | Audit with Optimization.',
       description: "Comprehensive assessment and audit of wired, wireless, and mobile networks, with optimization strategies to improve performance and security.",
@@ -26,7 +26,7 @@ const ContentCards = () => {
       link: '/services/network-assessment-audit-optimization'
     },
     {
-      type: 'SERVICE',
+      type: 'Get2AI',
       icon: <HandPlatter className="w-6 h-6" />,
       title: 'Transform to Sustainable IT infrastructure.',
       description: 'Modernize your IT infrastructure with eco-friendly solutions that enhance efficiency and sustainability.',
@@ -35,7 +35,7 @@ const ContentCards = () => {
       link: '/services/sustainable-it-infrastructure'
     },
     {
-      type: 'SERVICE',
+      type: 'Get2AI',
       icon: <HandPlatter className="w-6 h-6" />,
       title: `Secure Digital Transformation through Process Automation`,
       description: 'Leverage automation to securely transform your digital processes, boosting efficiency and reducing risk.',
@@ -44,7 +44,7 @@ const ContentCards = () => {
       link: '/services/secure-digital-transformation-process-automation'
     },
     {
-      type: 'SERVICE',
+      type: 'Get2AI',
       icon: <HandPlatter className="w-6 h-6" />,
       title: 'Secure AI insertion for Network Transformation',
       description: 'Integrate AI solutions into your network to enhance performance, security, and scalability.',

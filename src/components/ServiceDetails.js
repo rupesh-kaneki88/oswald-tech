@@ -186,6 +186,34 @@ export default function ServiceDetails({ serviceId }) {
     }
   };
 
+  const handleCheckAPIclick = async () => {
+    try{
+      const response = await fetch('/api/check-api',{
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          name: 'rupesh',
+          email: 'rupesh@gmail.com',
+          mobile: '8080909098',
+        })
+      })
+  
+      const data = await response.json()
+      const {name, email, mobile} = data.body
+  
+      if(response.ok){
+        console.log(`Received data: ${name}`)
+        toast.success(`Received Data: ${name}, ${email}, ${mobile}`)
+      } else {
+        console.log("Did not receive any data.")
+      }
+
+    } catch(error){
+      console.log('Error for check api: ',error)
+    }
+  }
 
   const scrollToSection = (ref) => {
     ref.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -577,10 +605,10 @@ export default function ServiceDetails({ serviceId }) {
                 className="w-full py-4 bg-gray-400 text-white rounded-md font-medium
                          hover:bg-gray-600 transition-colors duration-300 shadow-md mb-2"
               >
-                First slot free!
+                Book your first slot free!
               </motion.button>
 
-              <motion.button
+              {/* <motion.button
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 onClick={handlePaymentClick}
@@ -588,6 +616,16 @@ export default function ServiceDetails({ serviceId }) {
                          hover:bg-blue-700 transition-colors duration-300 shadow-md"
               >
                 Get Started Now
+              </motion.button> */}
+
+              <motion.button
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                onClick={handleCheckAPIclick}
+                className="w-full py-4 bg-blue-600 text-white rounded-md font-medium
+                         hover:bg-blue-700 transition-colors duration-300 shadow-md"
+              >
+                check api
               </motion.button>
 
 
@@ -619,7 +657,7 @@ export default function ServiceDetails({ serviceId }) {
       </div>
 
       {/* Floating Action Button */}
-      <AnimatePresence>
+      {/* <AnimatePresence>
         {isScrolled && (
           <motion.button
             initial={{ opacity: 0, scale: 0.8 }}
@@ -634,7 +672,7 @@ export default function ServiceDetails({ serviceId }) {
             <Zap size={24} aria-hidden="true" />
           </motion.button>
         )}
-      </AnimatePresence>
+      </AnimatePresence> */}
 
       {/* Payment Modal */}
       <AnimatePresence>

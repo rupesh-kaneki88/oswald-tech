@@ -75,5 +75,5 @@ export async function POST(request) {
       { success: false, message: 'Failed to send message. Please try again later.' },
       { status: 500 }
     );
-  }
+  } 
 }
