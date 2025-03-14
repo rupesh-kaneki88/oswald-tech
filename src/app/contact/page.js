@@ -1,15 +1,18 @@
 'use client'
 
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { motion, useInView } from 'framer-motion';
 import Navbar from '@/components/Navbar';
 import Link from 'next/link';
 import { MapPin, Phone, Mail, Globe } from 'lucide-react';
-import Head from 'next/head';
 
 const Contact = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, threshold: 0.2 });
+
+  useEffect(() => {
+      document.title = 'Get2AI | Contact'
+  }, [])
   
   const [formData, setFormData] = useState({
     name: '',
@@ -62,13 +65,10 @@ const Contact = () => {
 
   return (
     <>
-      <Head>
-        <title>Net2AI | Contact Us</title>
-        <meta name="description" content="Contact Net2AI for any inquiries or support."/>
-      </Head>
+      
       {/* Hero Image Section - 60vh */}
 
-        <div className="relative h-[90vh] w-full bg-white overflow-hidden font-sans">
+        <div className="relative h-[85vh] w-full bg-white overflow-hidden font-sans">
             <img 
             src="/contact-hero.jpg" 
             alt="Contact Osvan Technologies" 
@@ -94,7 +94,7 @@ const Contact = () => {
                       CONTACT
                     </h1>
                     <h2 className="text-3xl md:text-4xl lg:text-6xl font-base text-white mb-6">
-                        Net2AI Technologies
+                        Get2AI Technologies
                     </h2>
                     <p className="text-l md:text-2xl font-thin text-white max-w-3xl">
                         Reach Out and Transform Your Business with us.          
@@ -232,12 +232,12 @@ const Contact = () => {
 
                     <div className="flex items-center mb-4">
                     <Mail className="mr-4 text-blue-600 flex-shrink-0" />
-                    <p className="text-gray-700">contact@osvantechnologies.ca</p>
+                    <p className="text-gray-700">contact@get2aitechnologies.ca</p>
                     </div>
 
                     <div className="flex items-center">
                     <Globe className="mr-4 text-blue-600 flex-shrink-0" />
-                    <p className="text-gray-700">www.net2ai.com</p>
+                    <p className="text-gray-700">www.get2ai.com</p>
                     </div>
                 </div>
                 </div>

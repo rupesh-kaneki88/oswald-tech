@@ -1,17 +1,21 @@
 'use client'
 
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { motion, useInView } from 'framer-motion';
 import Navbar from '@/components/Navbar';
 import Link from 'next/link';
 import { MapPin, Phone, Mail, Globe } from 'lucide-react';
-import Head from 'next/head';
+
 
 const News = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, threshold: 0.2 });
 
   const [isFaded, setIsFaded] = useState(false);
+
+    useEffect(() => {
+        document.title = 'Get2AI | News'
+    }, [])
 
   // Handle video end event
   const handleVideoEnd = () => {
@@ -24,13 +28,10 @@ const News = () => {
 
   return(
     <>
-        <Head>
-            <title>Net2AI | News</title>
-        </Head>
-        <div className="relative h-[90vh] w-full bg-white overflow-hidden font-sans">
+        <div className="relative h-[85vh] w-full bg-white overflow-hidden font-sans">
             <img 
             src="/About3.jpg" 
-            alt="News Net2AI Technologies" 
+            alt="News Get2AI Technologies" 
             className="absolute top-0 left-0 w-full h-full object-cover"
             />
             <Navbar />
@@ -52,7 +53,7 @@ const News = () => {
                         NEWS
                     </h1>
                     <h2 className="text-3xl md:text-4xl lg:text-6xl font-base text-white mb-6">
-                        Net2AI Technologies
+                        Get2AI Technologies
                     </h2>
                     <p className="text-l md:text-2xl font-thin text-white max-w-3xl">
                         Making the mission, making headlines.          
@@ -72,7 +73,7 @@ const News = () => {
         >
             <div className='flex flex-col md:flex-row bg-white font-sans justify-center p-4 lg:p-8 '>
                 <p className='text-lg md:text-2xl font-base text-gray-700  text-center mx-8 mt-4 lg:mx-44'>
-                Welcome to our News and Updates section! Stay tuned for the latest announcements, innovations, and progress from Net2AI Technologies. Our goal is to keep you informed about the exciting developments in the tech world, particularly in network optimization, digital transformation, and cutting-edge AI technologies.
+                Welcome to our News and Updates section! Stay tuned for the latest announcements, innovations, and progress from Get2AI Technologies. Our goal is to keep you informed about the exciting developments in the tech world, particularly in network optimization, digital transformation, and cutting-edge AI technologies.
                 </p>
             </div>
                     

@@ -8,6 +8,7 @@ import { useRouter } from 'next/navigation';
 import { loadStripe } from '@stripe/stripe-js';
 import ServiceData from '@/providers/ServiceData';
 import { Contact } from 'lucide-react';
+import { toast } from 'react-toastify'; 
 
 const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY);
 
@@ -17,6 +18,7 @@ export default function ServiceDetails({ serviceId }) {
   const featuresRef = useRef(null);
   const benefitsRef = useRef(null);
   const [isPaymentModalOpen, setIsPaymentModalOpen] = useState(false);
+  const [isFreeTrialModalOpen, setFreeTrialModalOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [activeSection, setActiveSection] = useState(null);
   const [expandedFeature, setExpandedFeature] = useState(null);
@@ -70,11 +72,20 @@ export default function ServiceDetails({ serviceId }) {
     setIsPaymentModalOpen(false);
   };
 
+  const handleFreeTrialClick = () => {
+    setFreeTrialModalOpen(true)
+  }
+
+  const closeFreeTrialModal = () => {
+    setFreeTrialModalOpen(false)
+  }
+
   const handlePaymentSubmit = async () => {
     setIsLoading(true);
     const name = document.getElementById('name').value;
     const email = document.getElementById('email').value;
     const mobile = document.getElementById('mobile').value || '';
+    const organization = document.getElementById('organization').value || '';
     const serviceTitle = service.title
     const servicePrice = service.price 
     
@@ -91,7 +102,7 @@ export default function ServiceDetails({ serviceId }) {
         }),
       });
 
-      const emailResponse = await fetch('/api/contact',{
+      const emailResponse = await fetch('/api/payment-message',{
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -100,6 +111,7 @@ export default function ServiceDetails({ serviceId }) {
           name,
           email,
           mobile,
+          organization,
           service: serviceTitle,
           amount: servicePrice,
         })
@@ -116,8 +128,13 @@ export default function ServiceDetails({ serviceId }) {
 
       if (emailResponse.ok) {
         setSubmitStatus({ success: true, message: 'Message sent successfully! We will get back to you soon.' });
+        toast.success('Message sent successfully!');
+        setIsLoading(false)
       } else {
         setSubmitStatus({ success: false, message: data.message || 'Something went wrong. Please try again.' });
+        console.log(`${data.message}`)
+        toast.error("Please provide the necessary details.");
+        setIsLoading(false)
       }
 
     } catch (error) {
@@ -126,6 +143,50 @@ export default function ServiceDetails({ serviceId }) {
     }
   };
   
+  const handleFreeTrialSubmit = async () => {
+    setIsLoading(true);
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const mobile = document.getElementById('mobile').value || '';
+    const organization = document.getElementById('organization').value || '';
+    const serviceTitle = service.title
+    
+    try {
+      const emailResponse = await fetch('/api/free-trial',{
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          name,
+          email,
+          mobile,
+          organization,
+          service: serviceTitle,
+        })
+      })
+
+      // email response
+      const data = await emailResponse.json();
+
+      if (emailResponse.ok) {
+        setSubmitStatus({ success: true, message: 'Message sent successfully! We will get back to you soon.' });
+        toast.success('Message received successfully, we will get back to you!');
+        setIsLoading(false)
+      } else {
+        setSubmitStatus({ success: false, message: data.message || 'Something went wrong. Please try again.' });
+        console.log(`${data.message}`)
+        toast.error("Please provide the necessary details.");
+        setIsLoading(false)
+      }
+
+    } catch (error) {
+      console.error('Error initiating payment:', error);
+      setIsLoading(false);
+    }
+  };
+
+
   const scrollToSection = (ref) => {
     ref.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
@@ -512,12 +573,23 @@ export default function ServiceDetails({ serviceId }) {
               <motion.button
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
+                onClick={handleFreeTrialClick}
+                className="w-full py-4 bg-gray-400 text-white rounded-md font-medium
+                         hover:bg-gray-600 transition-colors duration-300 shadow-md mb-2"
+              >
+                First slot free!
+              </motion.button>
+
+              <motion.button
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
                 onClick={handlePaymentClick}
                 className="w-full py-4 bg-blue-600 text-white rounded-md font-medium
                          hover:bg-blue-700 transition-colors duration-300 shadow-md"
               >
                 Get Started Now
               </motion.button>
+
 
               <div className="mt-6 text-center">
                 <p className="text-sm text-gray-500">
@@ -644,6 +716,18 @@ export default function ServiceDetails({ serviceId }) {
                       placeholder="Your mobile number"
                     />
                   </motion.div>
+                  <motion.div
+                    whileHover={{ scale: 1.01 }}
+                    className="flex flex-col space-y-2"
+                  >
+                    <input
+                      type="text"
+                      id="organization"
+                      name="organization"
+                      className="w-full bg-transparent border-b-2 border-gray-300 focus:outline-none focus:border-blue-500 transition-all duration-300 px-2 py-3 text-gray-800 placeholder-gray-500"
+                      placeholder="Your organization "
+                    />
+                  </motion.div>
                 </div>
               </div>
               
@@ -702,6 +786,132 @@ export default function ServiceDetails({ serviceId }) {
           </motion.div>
         )}
       </AnimatePresence>
+
+        {/* Free Trial Modal */}
+      <AnimatePresence>
+        {isFreeTrialModalOpen && (
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-black/60 flex items-center justify-center z-50 p-4"
+            onClick={closeFreeTrialModal}
+          >
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.9, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.9, y: 20 }}
+              className="bg-white rounded-lg shadow-xl w-full max-w-md h-auto sm:h-full p-6 flex flex-col overflow-auto max-h-[90vh] sm:max-h-[80vh]"
+              onClick={e => e.stopPropagation()}
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby="Free-trial-modal-title"
+            >
+              <h3 id="free-trial-modal-title" className="text-xl font-semibold mb-4">Book Your Free Slot!</h3>
+              
+              <div className="bg-blue-50 p-4 rounded-md mb-6">
+                <div className="flex justify-between text-right mb-2">
+                  <span className="text-gray-600">Service:</span>
+                  <span className="font-medium">{service.title}</span>
+                </div>
+                {/* <div className="flex justify-between">
+                  <span className="text-gray-600">Amount:</span>
+                  <span className="font-medium text-blue-600">${service.price}</span>
+                </div> */}
+              </div>
+
+              {/* Contact Details Form */}
+              <div className="space-y-4 mb-6">
+                <h4 className="font-medium">Contact Details</h4>
+                <div className="space-y-3">
+                  <motion.div
+                    whileHover={{ scale: 1.01 }}
+                    className="flex flex-col space-y-2"
+                  >
+                    {/* <label htmlFor="name" className="text-sm font-medium text-gray-700">Name</label> */}
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      className="w-full bg-transparent border-b-2 border-gray-300 focus:outline-none focus:border-blue-500 transition-all duration-300 px-2 py-3 text-gray-800 placeholder-gray-500"
+                      placeholder="Your name *"
+                      required
+                    />
+                  </motion.div>
+
+                  <motion.div
+                    whileHover={{ scale: 1.01 }}
+                    className="flex flex-col space-y-2"
+                  >
+                    {/* <label htmlFor="email" className="text-sm font-medium text-gray-700">Email</label> */}
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      className="w-full bg-transparent border-b-2 border-gray-300 focus:outline-none focus:border-blue-500 transition-all duration-300 px-2 py-3 text-gray-800 placeholder-gray-500"
+                      placeholder="Your email *"
+                      required
+                    />
+                  </motion.div>
+
+                  <motion.div
+                    whileHover={{ scale: 1.01 }}
+                    className="flex flex-col space-y-2"
+                  >
+                    {/* <label htmlFor="mobile" className="text-sm font-medium text-gray-700">Mobile (Optional)</label> */}
+                    <input
+                      type="tel"
+                      id="mobile"
+                      name="mobile"
+                      className="w-full bg-transparent border-b-2 border-gray-300 focus:outline-none focus:border-blue-500 transition-all duration-300 px-2 py-3 text-gray-800 placeholder-gray-500"
+                      placeholder="Your mobile number"
+                    />
+                  </motion.div>
+
+                  <motion.div
+                    whileHover={{ scale: 1.01 }}
+                    className="flex flex-col space-y-2"
+                  >
+                    <input
+                      type="text"
+                      id="organization"
+                      name="organization"
+                      className="w-full bg-transparent border-b-2 border-gray-300 focus:outline-none focus:border-blue-500 transition-all duration-300 px-2 py-3 text-gray-800 placeholder-gray-500"
+                      placeholder="Your organization "
+                    />
+                  </motion.div>
+                </div>
+              </div>
+              
+              <div className="space-y-4">
+                                
+                <div className="flex gap-4 mt-8">
+                  <motion.button
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    onClick={closeFreeTrialModal}
+                    className="flex-1 py-3 px-4 border border-gray-300 rounded-md hover:bg-gray-50 font-medium"
+                  >
+                    Cancel
+                  </motion.button>
+                  
+                  <motion.button
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    onClick={handleFreeTrialSubmit}
+                    disabled={isLoading}
+                    className="flex-1 py-3 px-4 bg-blue-600 text-white rounded-md hover:bg-blue-700 
+                             disabled:bg-blue-400 disabled:cursor-not-allowed font-medium"
+                  >
+                    {isLoading ? 'Processing...' : 'Try now!'}
+                  </motion.button>
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+      
     </div>
   );
 }

@@ -39,12 +39,12 @@ function Navbar() {
           {/* Logo */}
           <motion.a
             href="/"
-            className="text-white text-xl font-bold font-sans"
+            className="text-white text-3xl font-bold font-sans"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             aria-label="Home"
           >
-            Net2AI
+            Get2AI
           </motion.a>
 
           {/* Desktop Navigation */}

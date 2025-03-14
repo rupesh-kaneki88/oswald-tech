@@ -13,6 +13,10 @@ function PaymentSuccessPageContent() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+      document.title = 'Get2AI | Payment success'
+  }, [])
+
+  useEffect(() => {
     const timer = setTimeout(() => {
       setOrderDetails({
         id: 'ORD' + Math.floor(Math.random() * 1000000),

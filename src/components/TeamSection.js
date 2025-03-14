@@ -32,7 +32,7 @@ const TeamSection = () => {
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-light text-gray-900 mb-4">Our Leadership</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Meet the dedicated professionals driving innovation and excellence at Net2AI Technologies.
+            Meet the dedicated professionals driving innovation and excellence at Get2AI Technologies.
           </p>
         </div>
         <div className="grid md:grid-cols-2 gap-12">

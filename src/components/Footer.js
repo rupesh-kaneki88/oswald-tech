@@ -10,7 +10,7 @@ const Footer = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
             {/* Logo Section */}
             <div>
-              <h2 className="text-2xl font-bold text-gray-900 mb-2">Net2AI</h2>
+              <h2 className="text-2xl font-bold text-gray-900 mb-2">Get2AI</h2>
               <p className="text-gray-600">Bringing Advanced IT Solutions within Your Reach.</p>
             </div>
             
@@ -30,7 +30,7 @@ const Footer = () => {
             <div>
               <h3 className="font-semibold text-gray-800 mb-4">Information</h3>
               <ul className="space-y-3">
-                <li><a href="/about" className="text-gray-600 hover:text-gray-900">About Net2AI Technologies</a></li>
+                <li><a href="/about" className="text-gray-600 hover:text-gray-900">About Get2AI Technologies</a></li>
                 <li><a href="/contact" className="text-gray-600 hover:text-gray-900">Contact Us</a></li>
               </ul>
             </div>
@@ -52,7 +52,7 @@ const Footer = () => {
           <div className="border-t pt-8">
             <div className="flex flex-col md:flex-row justify-between items-center gap-4">
               <p className="text-sm text-gray-600">
-                © 2025 Net2AI. All rights reserved.
+                © 2025 Get2AI. All rights reserved.
               </p>
               <div className="flex flex-wrap justify-center gap-4 text-sm text-gray-600">
                 <a href="/privacy-legal?section=privacy" className="hover:text-gray-900">Privacy Policy</a>

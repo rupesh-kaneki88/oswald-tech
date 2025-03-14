@@ -2,7 +2,6 @@
 
 import ServiceDetailsComponent from "@/components/ServiceDetails"; // Import the client-side component
 import ServiceData from "@/providers/ServiceData";
-import Head from "next/head";
 
 export function generateStaticParams() {
     const serviceIds = Object.keys(ServiceData);
@@ -10,6 +9,11 @@ export function generateStaticParams() {
       serviceId: serviceId.replace(/&/g, 'and').toLowerCase(), // Ensure serviceId format consistency
     }));
   }
+
+  export const metadata = {
+    title: `Get2AI | Services in details`,
+    description: "About Get2AI technologies",
+  };
 
 export default function ServiceDetailPage({ params }) { // Renamed function to avoid conflict
   const { serviceId } = params;
@@ -22,10 +26,6 @@ export default function ServiceDetailPage({ params }) { // Renamed function to a
   // Pass serviceId to the client-side component
   return (
     <div>
-      <Head>
-        <title> {`Net2AI | ${serviceId}`}</title>
-        <meta name="description" content="Contact Net2AI for any inquiries or support."/>
-      </Head>
       {/* Render client-side logic */}
       <ServiceDetailsComponent serviceId={serviceId} />
     </div>

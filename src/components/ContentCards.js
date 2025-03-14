@@ -10,6 +10,15 @@ const ContentCards = () => {
     {
       type: 'SERVICE',
       icon: <HandPlatter className="w-6 h-6" />,
+      title: 'On Demand Digital Network Consultancy Services from Certified Experts',
+      description: 'Access expert digital network consulting services tailored to your needs, available whenever you require them.',
+      action: 'Explore',
+      bgImage: '/digi-network.jpg',
+      link: '/services/on-demand-network-consultancy'
+    },
+    {
+      type: 'SERVICE',
+      icon: <HandPlatter className="w-6 h-6" />,
       title: 'Network (Wired | Wireless | Mobile ) Assessment | Audit with Optimization.',
       description: "Comprehensive assessment and audit of wired, wireless, and mobile networks, with optimization strategies to improve performance and security.",
       action: 'Explore',
@@ -43,19 +52,11 @@ const ContentCards = () => {
       bgImage: '/AI.jpg',
       link: '/services/secure-ai-insertion-network-transformation'
     },
-    {
-      type: 'SERVICE',
-      icon: <HandPlatter className="w-6 h-6" />,
-      title: 'On Demand Digital Network Consultancy Services from Certified Experts',
-      description: 'Access expert digital network consulting services tailored to your needs, available whenever you require them.',
-      action: 'Explore',
-      bgImage: '/digi-network.jpg',
-      link: '/services/on-demand-network-consultancy'
-    }
+    
   ];
 
   return (
-    <section className="w-full bg-white mt-28 px-8 lg:px-16 font-sans">
+    <section className="w-full bg-white mt-16 px-8 lg:px-16 font-sans">
       <div className="max-w-[1400px] mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
           {cards.map((card, index) => (

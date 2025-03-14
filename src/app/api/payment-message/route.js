@@ -4,7 +4,7 @@ import nodemailer from 'nodemailer';
 export async function POST(request) {
   try {
     const body = await request.json();
-    const { name, email, mobile, service, amount } = body;
+    const { name, email, mobile, organization, service, amount } = body;
     
     // Input validation
     if (!name || !email || !service || !amount) {
@@ -36,6 +36,7 @@ export async function POST(request) {
         <p><strong>Name:</strong> ${name}</p>
         <p><strong>Email:</strong> ${email}</p>
         ${mobile ? `<p><strong>Mobile:</strong> ${mobile}</p>` : ''}
+        ${organization ? `<p><strong>Organization:</strong> ${organization}</p>` : ''}
         <h2>Service Details</h2>
         <p><strong>Service:</strong> ${service}</p>
         <p><strong>Amount:</strong> $${amount}</p>
@@ -45,7 +46,7 @@ export async function POST(request) {
     
     // Email content for the user (confirmation email)
     const userMailOptions = {
-      from: `"Osvan Technologies" <${process.env.EMAIL_FROM}>`,
+      from: `"Get2AI Technologies" <${process.env.EMAIL_FROM}>`,
       to: email,
       subject: 'Thank you for your payment submission',
       html: `
@@ -58,7 +59,7 @@ export async function POST(request) {
         <p><strong>Payment Status:</strong> Pending</p>
         <p>We will process your payment and get back to you as soon as possible.</p>
         <p>Best regards,</p>
-        <p>The Net2AI Technologies Team</p>
+        <p>The Get2AI Technologies Team</p>
       `,
     };
     

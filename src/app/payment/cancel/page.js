@@ -1,12 +1,15 @@
 // app/payment/cancel/page.js
 'use client'
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { XCircle } from 'lucide-react';
 
 export default function PaymentCancelPage() {
+  useEffect(()=> {
+    document.title = 'Get2AI | Payment Cancellation'
+  }, [])
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50 p-4">
       <motion.div 

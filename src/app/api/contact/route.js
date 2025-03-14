@@ -45,7 +45,7 @@ export async function POST(request) {
     
     // Email content for the user (confirmation email)
     const userMailOptions = {
-      from: `"Osvan Technologies" <${process.env.EMAIL_FROM}>`,
+      from: `"Get2AI Technologies" <${process.env.EMAIL_FROM}>`,
       to: email,
       subject: 'Thank you for contacting Osvan Technologies',
       html: `

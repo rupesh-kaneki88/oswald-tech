@@ -18,6 +18,7 @@ const HeroSection = () => {
     { webm: '/art4.webm', mp4: '/art4.mp4' },
     { webm: '/art5.webm', mp4: '/art5.mp4' },
     { webm: '/art6.webm', mp4: '/art6.mp4' },
+    { webm: '/art7.webm', mp4: '/art7.mp4' },
   ];
 
   const words = ['Challenging', 'Exploring', 'Discovering', 'Innovating'];
@@ -75,7 +76,7 @@ const HeroSection = () => {
   }, [handleVideoTransition, handleWordTransition]);
 
   return (
-    <div className="relative h-screen w-full overflow-hidden">
+    <div className="relative h-[85vh] w-full overflow-hidden">
       {/* Horizontal Lines */}
       <div className="absolute inset-0 z-10">
         <div className="h-full mx-8 lg:mx-28 flex flex-col justify-between">

@@ -1,15 +1,18 @@
 'use client'
 
-import React, { useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import Navbar from '@/components/Navbar';
 import Link from 'next/link';
 import TeamSection from '@/components/TeamSection';
-import Head from 'next/head';
 
 const About = () => {
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true, threshold: 0.2 });
+
+    useEffect(() => {
+        document.title = 'Get2AI | About'
+    }, [])
 
     const cards = [
         {
@@ -49,11 +52,7 @@ const About = () => {
 
     return(
         <>
-        <Head>
-            <title>Net2AI | About</title>
-            <meta name="description" content="About Net2AI technologies"/>
-        </Head>
-        <div className="relative h-screen w-full bg-white overflow-hidden">
+        <div className="relative h-[85vh] w-full bg-white overflow-hidden">
         <motion.video
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -89,7 +88,7 @@ const About = () => {
                   ABOUT
                 </h1>
                 <h2 className="text-3xl md:text-4xl lg:text-6xl font-base text-white mb-6">
-                    Net2AI Technologies
+                    Get2AI Technologies
                 </h2>
                 <p className="text-l md:text-2xl font-thin text-white max-w-3xl">
                     Empowering Business Goals with Transformative Technology Solutions.                </p>
@@ -108,7 +107,7 @@ const About = () => {
             >
             <div className='flex flex-col md:flex-row bg-white font-sans justify-center p-4 lg:p-8 '>
                 <p className='text-lg md:text-2xl font-base text-gray-700  text-center mx-8 mt-12 lg:mx-44'>
-                    At Net2AI Technologies, we are a service-driven organization dedicated to helping our clients achieve their business goals by leveraging cutting-edge technologies across the wired, wireless, and mobile spaces, including 5G. Our approach is vendor-neutral, focusing on delivering impactful, tailored solutions with the expertise of certified industry professionals.                
+                    At Get2AI Technologies, we are a service-driven organization dedicated to helping our clients achieve their business goals by leveraging cutting-edge technologies across the wired, wireless, and mobile spaces, including 5G. Our approach is vendor-neutral, focusing on delivering impactful, tailored solutions with the expertise of certified industry professionals.                
                 </p>
             </div>
 

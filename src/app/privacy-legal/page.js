@@ -15,6 +15,10 @@ const PrivacyLegal = () => {
   const searchParams = useSearchParams();
 
   useEffect(() => {
+      document.title = 'Get2AI | Privacy & Legal Terms'
+  }, [])
+
+  useEffect(() => {
     // Check for section parameter in URL and scroll to appropriate section
     const section = searchParams.get('section');
     if (section === 'privacy' && privacyRef.current) {
