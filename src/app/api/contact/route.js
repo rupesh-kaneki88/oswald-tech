@@ -2,6 +2,7 @@
 
 import { NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
+import { corsHeaders } from '@/lib/cors';
 
 export async function POST(request) {
   try {
@@ -12,7 +13,7 @@ export async function POST(request) {
     if (!name || !email || !message) {
       return NextResponse.json(
         { success: false, message: 'Name, email, and message are required fields' },
-        { status: 400 }
+        { status: 400, headers: corsHeaders() }
       );
     }
     
@@ -65,7 +66,7 @@ export async function POST(request) {
     
     return NextResponse.json(
       { success: true, message: 'Your message has been sent successfully!' },
-      { status: 200 }
+      { status: 200, headers: corsHeaders() }
     );
     
   } catch (error) {
@@ -73,7 +74,14 @@ export async function POST(request) {
     
     return NextResponse.json(
       { success: false, message: 'Failed to send message. Please try again later.' },
-      { status: 500 }
+      { status: 500, headers: corsHeaders() }
     );
   }
+}
+
+export async function OPTIONS() {
+  return new Response(null, { 
+    status: 204, 
+    headers: corsHeaders()
+  });
 }

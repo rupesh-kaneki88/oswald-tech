@@ -1,6 +1,7 @@
 // app/api/create-checkout-session/route.js
 import { NextResponse } from 'next/server';
 import Stripe from 'stripe';
+import { corsHeaders } from '@/lib/cors';
 
 if (!process.env.STRIPE_SECRET_KEY) {
   throw new Error("STRIPE_SECRET_KEY is missing");
@@ -35,12 +36,19 @@ export async function POST(request) {
         cancel_url: `${request.headers.get('origin')}/payment/cancel`,
     });
 
-    return NextResponse.json({ sessionId: session.id });
+    return NextResponse.json({ sessionId: session.id }, {headers: corsHeaders()});
   } catch (error) {
     console.error('Error creating checkout session:', error);
     return NextResponse.json(
       { error: 'Error creating checkout session' },
-      { status: 500 }
+      { status: 500, headers: corsHeaders() }
     );
   }
+}
+
+export async function OPTIONS() {
+  return new Response(null, { 
+    status: 204, 
+    headers: corsHeaders()
+  });
 }
