@@ -68,7 +68,7 @@ const Contact = () => {
       
       {/* Hero Image Section - 60vh */}
 
-        <div className="relative h-[85vh] w-full bg-white overflow-hidden font-sans">
+        <div className="relative h-[75vh] w-full bg-white overflow-hidden font-nunito">
             <img 
             src="/contact-hero.jpg" 
             alt="Contact Osvan Technologies" 
@@ -83,7 +83,7 @@ const Contact = () => {
                 <hr className="border-t-2 border-gray-300 my-4" />
                 </div>
     
-                <div className="h-full flex flex-col font-sans justify-center max-w-5xl">
+                <div className="h-full flex flex-col font-nunito justify-center max-w-5xl">
                 <motion.div
                     initial={{ opacity: 0, y: 50 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -113,7 +113,7 @@ const Contact = () => {
             transition={{ duration: 1, delay: 0.5 }}
             className="group relative bg-white  overflow-hidden mx-4 md:mx-16 lg:mx-28 my-12 -mt-20"
             >
-                    <div className='flex flex-col md:flex-row bg-white font-sans justify-center p-4 lg:p-8 '>
+                    <div className='flex flex-col md:flex-row bg-white font-nunito justify-center p-4 lg:p-8 '>
                         <p className='text-lg md:text-2xl font-base text-gray-700  text-center mx-8 mt-4 lg:mx-44'>
                             Have questions or need assistance? Fill out the form below and our team will get back to you shortly.
                             
@@ -211,10 +211,10 @@ const Contact = () => {
                 Contact Information
             </h2>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 justify-center p-4 lg:p-16 font-sans">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 justify-center p-4 lg:p-16 font-nunito">
                 {/* Headquarters */}
                 <div className="flex flex-col h-full ">
-                <h3 className="text-2xl font-semibold font-sans mb-4 text-gray-800">Headquarters</h3>
+                <h3 className="text-2xl font-semibold font-nunito mb-4 text-gray-800">Headquarters</h3>
                 <div className="bg-gray-50 p-6 rounded-lg flex-grow">
                     <div className="flex items-start mb-4">
                     <MapPin className="mr-4 text-blue-600 flex-shrink-0 mt-1" />
@@ -244,7 +244,7 @@ const Contact = () => {
 
                 {/* Business Hours */}
                 <div className="flex flex-col h-full">
-                <h3 className="text-2xl font-semibold font-sans mb-4 text-gray-800">Business Hours</h3>
+                <h3 className="text-2xl font-semibold font-nunito mb-4 text-gray-800">Business Hours</h3>
                 <div className="bg-gray-50 p-6 rounded-lg flex-grow">
                     <div className="grid grid-cols-2 gap-2">
                     <div className="text-gray-600">Monday - Friday:</div>

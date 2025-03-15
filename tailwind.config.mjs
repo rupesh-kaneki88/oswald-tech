@@ -20,6 +20,9 @@ export default {
       fontFamily: {
         'quicksand': ['Quicksand'],
       },
+      fontFamily: {
+        'nunito': ['Nunito Sans', 'sans-serif'],
+      },
     },
   },
   plugins: [],

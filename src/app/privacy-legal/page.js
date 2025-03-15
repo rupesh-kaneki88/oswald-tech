@@ -46,7 +46,7 @@ const PrivacyLegal = () => {
             <hr className="border-t-2 border-gray-300 my-4" />
           </div>
 
-          <div className="h-full flex flex-col font-sans justify-center max-w-5xl">
+          <div className="h-full flex flex-col font-nunito justify-center max-w-5xl">
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}

@@ -56,7 +56,7 @@ const ContentCards = () => {
   ];
 
   return (
-    <section className="w-full bg-white mt-16 px-8 lg:px-16 font-sans">
+    <section className="w-full bg-white mt-16 px-8 lg:px-16 font-nunito">
       <div className="max-w-[1400px] mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
           {cards.map((card, index) => (

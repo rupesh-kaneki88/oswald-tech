@@ -28,7 +28,7 @@ const News = () => {
 
   return(
     <>
-        <div className="relative h-[85vh] w-full bg-white overflow-hidden font-sans">
+        <div className="relative h-[75vh] w-full bg-white overflow-hidden font-nunito">
             <img 
             src="/About3.jpg" 
             alt="News Get2AI Technologies" 
@@ -42,7 +42,7 @@ const News = () => {
                 <hr className="border-t-2 border-gray-300 my-4" />
                 </div>
     
-                <div className="h-full flex flex-col font-sans justify-center max-w-5xl">
+                <div className="h-full flex flex-col font-nunito justify-center max-w-5xl">
                 <motion.div
                     initial={{ opacity: 0, y: 50 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -71,7 +71,7 @@ const News = () => {
         transition={{ duration: 1, delay: 0.5 }}
         className="group relative bg-white  overflow-hidden mx-4 md:mx-16 lg:mx-28 my-12 -mt-20"
         >
-            <div className='flex flex-col md:flex-row bg-white font-sans justify-center p-4 lg:p-8 '>
+            <div className='flex flex-col md:flex-row bg-white font-nunito justify-center p-4 lg:p-8 '>
                 <p className='text-lg md:text-2xl font-base text-gray-700  text-center mx-8 mt-4 lg:mx-44'>
                 Welcome to our News and Updates section! Stay tuned for the latest announcements, innovations, and progress from Get2AI Technologies. Our goal is to keep you informed about the exciting developments in the tech world, particularly in network optimization, digital transformation, and cutting-edge AI technologies.
                 </p>
@@ -80,7 +80,7 @@ const News = () => {
         </motion.div>
 
         {/* Grid part */}
-        <div className="container mx-auto  py-8 max-w-6xl -mt-4 font-sans">
+        <div className="container mx-auto  py-8 max-w-6xl -mt-4 font-nunito">
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
                   {/* Left Column - Details */}
                 <div className="lg:col-span-2 ">

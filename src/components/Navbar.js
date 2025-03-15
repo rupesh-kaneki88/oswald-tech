@@ -33,13 +33,13 @@ function Navbar() {
   );
 
   return (
-    <nav className="sticky top-0 w-full z-50 bg-transparent font-sans">
+    <nav className="sticky top-0 w-full z-50 bg-transparent font-nunito">
       <div className="max-w-[1400px] mx-auto px-8 lg:px-16">
         <div className="flex justify-between items-center py-6">
           {/* Logo */}
           <motion.a
             href="/"
-            className="text-white text-3xl font-bold font-sans"
+            className="text-white text-3xl font-bold font-nunito"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             aria-label="Home"

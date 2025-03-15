@@ -13,12 +13,11 @@ const HeroSection = () => {
 
   const videos = [
     { webm: '/art1.webm', mp4: '/art1.mp4' },
-    { webm: '/art2.webm', mp4: '/art2.mp4' },
     { webm: '/art3.webm', mp4: '/art3.mp4' },
-    { webm: '/art4.webm', mp4: '/art4.mp4' },
-    { webm: '/art5.webm', mp4: '/art5.mp4' },
     { webm: '/art6.webm', mp4: '/art6.mp4' },
-    { webm: '/art7.webm', mp4: '/art7.mp4' },
+    { webm: '/art2.webm', mp4: '/art2.mp4' },
+    { webm: '/art4.webm', mp4: '/art4.mp4' },
+    { webm: '/art8.webm', mp4: '/art5.mp4' },
   ];
 
   const words = ['Challenging', 'Exploring', 'Discovering', 'Innovating'];
@@ -76,7 +75,7 @@ const HeroSection = () => {
   }, [handleVideoTransition, handleWordTransition]);
 
   return (
-    <div className="relative h-[85vh] w-full overflow-hidden">
+    <div className="relative h-[75vh] w-full overflow-hidden">
       {/* Horizontal Lines */}
       <div className="absolute inset-0 z-10">
         <div className="h-full mx-8 lg:mx-28 flex flex-col justify-between">
@@ -144,7 +143,7 @@ const HeroSection = () => {
                     animate={{ x: 0 }}
                     exit={{ opacity: 0, x: -100 }}
                     transition={{ duration: 0.3 }}
-                    className="text-6xl md:text-8xl font-normal md:px-12 pb-2 font-Montserrat"
+                    className="text-5xl md:text-7xl font-normal md:px-12 mt-8 pb-2 font-Montserrat"
                     // className="text-6xl md:text-8xl font-normal md:px-12 pb-2 bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 text-transparent bg-clip-text"
                     style={{ lineHeight: '1' }} // optional, try adjusting line-height
                 >
@@ -153,12 +152,12 @@ const HeroSection = () => {
             </AnimatePresence>
 
             
-            <h1 className="text-6xl md:text-8xl font-normal mb-4 font-sans md:mx-12">
+            <h1 className="text-5xl md:text-7xl font-normal mb-4 font-nunito md:mx-12">
                Feasible.
             </h1>
 
             <motion.p 
-              className="text-lg md:text-2xl max-w-2xl mx-auto mb-8 md:px-12 font-sans font-thin"
+              className="text-lg md:text-2xl max-w-2xl mx-auto mb-8 md:px-12 font-nunito font-thin"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.3 }}
@@ -170,7 +169,7 @@ const HeroSection = () => {
               onClick={() => router.push('/contact')}
               className=" px-4 md:px-12 py-3 hover:bg-transparent transition-colors relative overflow-hidden group "
             >
-              <span className="relative z-10 text-2xl font-thin font-sans">Connect With Us</span>
+              <span className="relative z-10 text-2xl font-thin font-nunito">Connect With Us</span>
               <div className="absolute bottom-[8px] left-0 w-0 h-[2px] bg-yellow-400 mx-12 mr-20 transition-all duration-300 ease-out group-hover:w-full" />
             </button>
           </div>

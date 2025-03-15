@@ -9,7 +9,7 @@ const NewsSlider = () => {
   
 
   return (
-    <div className="relative w-full py-16 bg-white font-sans">
+    <div className="relative w-full py-16 bg-white font-nunito">
       <div className="max-w-[1400px] mx-auto px-8 lg:px-16">
         <div className="flex items-center justify-between mb-8 mx-6">
           <h2 className="text-2xl font-light text-gray-900">Latest News</h2>

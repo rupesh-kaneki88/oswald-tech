@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@next/font": "^14.2.15",
     "@stripe/stripe-js": "^5.7.0",
     "framer-motion": "^12.4.3",
     "lucide-react": "^0.475.0",
@@ -16,7 +17,7 @@
     "nodemailer": "^6.10.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-toastify": "^11.0.5",
+    "react-hot-toast": "^2.5.2",
     "stripe": "^17.7.0"
   },
   "devDependencies": {

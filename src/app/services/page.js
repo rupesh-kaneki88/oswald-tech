@@ -6,7 +6,6 @@ import { ArrowUpRight } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Link from 'next/link';
 import ServiceData from '@/providers/ServiceData';
-import Head from 'next/head';
 
 const ServiceCard = ({ service, index }) => {
     const ref = useRef(null);
@@ -31,9 +30,9 @@ const ServiceCard = ({ service, index }) => {
             />
             <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-300" />
               {/* Description */}
-            <div className="absolute bottom-0 left-0 w-full px-4 py-2">
+            <div className="absolute bottom-0 left-0 w-full mb-8 p-8">
               <motion.div
-                className="font-sans text-white text-sm lg:text-xl font-sans transform translate-x-full opacity-0 group-hover:opacity-100 group-hover:translate-x-0 transition-transform duration-500 ease-out"
+                className="font-nunito text-md lg:text-lg text-gray-200 font-nunito transform translate-x-full opacity-0 group-hover:opacity-100 group-hover:translate-x-0 transition-transform duration-500 ease-out"
               >
                 {service.fullDesc.length > 250 ? `${service.fullDesc.substring(0, 250)}...` : service.fullDesc}
               </motion.div>
@@ -55,7 +54,7 @@ const ServiceCard = ({ service, index }) => {
                 whileTap={{ scale: 0.98 }}
                 className=" py-3 hover:bg-transparent transition-colors relative overflow-hidden group"
               >
-                <span className="relative z-10 text-2xl font-thin font-sans">Explore Service</span>
+                <span className="relative z-10 text-2xl font-thin font-nunito">Explore Service</span>
                 <div className="absolute bottom-[8px] left-0 w-0 h-[2px] bg-yellow-400 mx-0 transition-all duration-300 ease-out group-hover:w-full" />
 
               </motion.button>
@@ -77,11 +76,8 @@ const Services = () => {
 
   return (
     <>
-      <Head>
-        <title>Get2AI | Services</title>
-      </Head>
 
-      <div className="relative h-[85vh] w-full bg-white overflow-hidden">
+      <div className="relative h-[75vh] w-full bg-white overflow-hidden">
         <motion.div
           className="absolute top-0 left-0 w-full h-full bg-black" // Ensure black background
           initial={{ opacity: 0 }}
@@ -100,8 +96,8 @@ const Services = () => {
             loop
             preload='auto'
           >
-            <source src="/Services-page.webm" type="video/webm" />
-            <source src="/Services-page.mp4" type="video/mp4" />
+            <source src="/Service-new-vid.webm" type="video/webm" />
+            <source src="/Service-new-vid.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </motion.video>
         </motion.div>
@@ -114,12 +110,12 @@ const Services = () => {
             <hr className="border-t-2 border-gray-300 my-4" />
           </div>
 
-          <div className="h-full flex flex-col font-sans justify-center max-w-5xl">
+          <div className="h-full flex flex-col font-nunito justify-center max-w-5xl">
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.5 }}
-              className="text-left p-4 md:p-8 lg:p-16"
+              className="text-left p-4 md:p-8 lg:p-16 mt-32"
             >
               <h1 className="text-xs md:text-base lg:text-base font-semibold text-white lg:mb-4">
                 SERVICES
@@ -135,7 +131,7 @@ const Services = () => {
         </div>
       </div>
 
-      <div className="bg-gray-50 py-4">
+      <div className="bg-gray-50 py-4 font-nunito">
         {services.map((service, index) => (
           <ServiceCard key={index} service={service} index={index} />
         ))}

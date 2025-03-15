@@ -8,7 +8,7 @@ import { useRouter } from 'next/navigation';
 import { loadStripe } from '@stripe/stripe-js';
 import ServiceData from '@/providers/ServiceData';
 import { Contact } from 'lucide-react';
-import { toast } from 'react-toastify'; 
+import { toast } from 'react-hot-toast';
 
 const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY);
 
@@ -231,7 +231,7 @@ export default function ServiceDetails({ serviceId }) {
   const featureIcons = [Star, Shield, Clock, Zap, Star, Shield, Clock];
   
   return (
-    <div className="bg-white min-h-screen font-sans">
+    <div className="bg-white min-h-screen font-nunito">
       {/* Progress Bar */}
       <div 
         className="fixed top-0 left-0 h-1 bg-blue-600 z-50 transition-all duration-300" 
@@ -292,7 +292,7 @@ export default function ServiceDetails({ serviceId }) {
       </AnimatePresence> */}
 
       {/* Hero Section with Parallax Effect */}
-      <div className="relative h-[100vh] lg:h-[80vh] w-full overflow-hidden">
+      <div className="relative h-[100vh] lg:h-[75vh] w-full overflow-hidden">
         <motion.div
           initial={{ scale: 1.1 }}
           animate={{ scale: 1 }}
@@ -556,8 +556,8 @@ export default function ServiceDetails({ serviceId }) {
                 </span>
                 <h3 className="text-2xl font-bold mb-2">Service Package</h3>
                 <div className="flex items-center justify-center mb-2">
-                  <span className="text-4xl font-bold">${service.price}</span>
-                  <span className="text-gray-500 ml-2">only</span>
+                  {/* <span className="text-4xl font-bold">${service.price}</span>
+                  <span className="text-gray-500 ml-2">only</span> */}
                 </div>
                 <div className="flex justify-center">
                   {[1, 2, 3, 4, 5].map(star => (
@@ -618,7 +618,7 @@ export default function ServiceDetails({ serviceId }) {
                 Get Started Now
               </motion.button> */}
 
-              <motion.button
+              {/* <motion.button
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 onClick={handleCheckAPIclick}
@@ -626,7 +626,7 @@ export default function ServiceDetails({ serviceId }) {
                          hover:bg-blue-700 transition-colors duration-300 shadow-md"
               >
                 check api
-              </motion.button>
+              </motion.button> */}
 
 
               <div className="mt-6 text-center">

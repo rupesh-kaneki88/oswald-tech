@@ -52,7 +52,7 @@ const About = () => {
 
     return(
         <>
-        <div className="relative h-[85vh] w-full bg-white overflow-hidden">
+        <div className="relative h-[75vh] w-full bg-white overflow-hidden">
         <motion.video
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -77,7 +77,7 @@ const About = () => {
               <hr className="border-t-2 border-gray-300 my-4" />
             </div>
   
-            <div className="h-full flex flex-col font-sans justify-center max-w-5xl">
+            <div className="h-full flex flex-col font-nunito justify-center max-w-5xl">
               <motion.div
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -105,7 +105,7 @@ const About = () => {
             transition={{ duration: 1, delay: 0.5 }}
             className="group relative bg-white  overflow-hidden mx-4 md:mx-16 lg:mx-28 my-12 -mt-8"
             >
-            <div className='flex flex-col md:flex-row bg-white font-sans justify-center p-4 lg:p-8 '>
+            <div className='flex flex-col md:flex-row bg-white font-nunito justify-center p-4 lg:p-8 '>
                 <p className='text-lg md:text-2xl font-base text-gray-700  text-center mx-8 mt-12 lg:mx-44'>
                     At Get2AI Technologies, we are a service-driven organization dedicated to helping our clients achieve their business goals by leveraging cutting-edge technologies across the wired, wireless, and mobile spaces, including 5G. Our approach is vendor-neutral, focusing on delivering impactful, tailored solutions with the expertise of certified industry professionals.                
                 </p>
@@ -115,7 +115,7 @@ const About = () => {
 
         {/* Team details */}
         <div
-            className="bg-transparent mx-4 md:mx-16 lg:mx-16 my-12 -mt-8 font-sans relative z-10"
+            className="bg-transparent mx-4 md:mx-16 lg:mx-16 my-12 -mt-8 font-nunito relative z-10"
         >
             <TeamSection/>
         </div>
@@ -125,10 +125,10 @@ const About = () => {
             <div className="flex flex-col lg:flex-row lg:flex-row-reverse gap-14 lg:gap-22 md:mx-10 sm:mx-5">
                 {/* Fixed column */}
                 <div className="justify-center items-center flex flex-col text-wrap lg:sticky top-0 max-h-screen lg:p-4 bg-white">
-                <h2 className="lg:text-6xl text-3xl text-gray-900 mb-2 font-sans font-light">
+                <h2 className="lg:text-6xl text-3xl text-gray-900 mb-2 font-nunito font-light">
                     Driving Innovation Across Wired, Wireless, and Mobile Ecosystems.
                 </h2>
-                <p className="text-gray-600 font-sans text-lg my-8">
+                <p className="text-gray-600 font-nunito text-lg my-8">
                 With extensive experience across multiple domains, we offer customized solutions for on-prem, hybrid, and cloud environments. 
                 Our proven track record in implementing AI-augmented digital technologies ensures that we deliver solutions that are not only innovative but also cost-effective, meeting your unique needs and fitting within your budget.
                 </p>
@@ -162,7 +162,7 @@ const About = () => {
                         {/* Content */}
                         <div className="relative h-full p-8 flex flex-col justify-between text-white z-10">
                             <div className="relative inline-block">
-                                <h3 className="text-2xl font-normal font-sans mb-4 leading-tight">
+                                <h3 className="text-2xl font-normal font-nunito mb-4 leading-tight">
                                     {card.title}
                                 </h3>
                             {/* Animated underline */}
@@ -170,7 +170,7 @@ const About = () => {
                         </div>
                         <div className="overflow-hidden">
                             <p 
-                                className="text-md lg:text-lg text-gray-200 font-sans transform translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out"
+                                className="text-md lg:text-lg text-gray-200 font-nunito transform translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out"
                             >
                                 {card.description}
                             </p>
@@ -194,7 +194,7 @@ const About = () => {
             height: '300px', // Adjust height as per your requirement
             }}
         >
-           <div className='absolute inset-y-0 left-0 flex flex-col justify-center font-sans mx-8 sm:mx-16 md:mx-28'>
+           <div className='absolute inset-y-0 left-0 flex flex-col justify-center font-nunito mx-8 sm:mx-16 md:mx-28'>
                 <h2 className='font-thin text-3xl sm:text-4xl md:text-5xl text-white'>
                     Ready to take the next step?
                 </h2>

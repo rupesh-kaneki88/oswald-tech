@@ -4,7 +4,8 @@ const ServiceData = {
       "title": "On-Demand Digital Network Consultancy Services from Certified Experts",
       "desc": "Our on-demand consultancy services offer businesses access to certified network experts who can provide guidance on network design, security, optimization, and troubleshooting. We offer flexible support, tailored to your unique needs, ensuring your network infrastructure is robust and efficient.",
       "fullDesc": "We offer flexible on-demand technical expertise that suits your needs and billed on a low cost per hour basis with No long term contracts. Our approach is to make our Customers achieve their Business Goals and build Trust on a on-going basis",
-      "img": "/service5.jpg",
+      "img": "/on-demand.jpg",
+      // "img": "/service5.jpg",
       "price": 149.99,
       "features": [
         "Access to certified network consultants",
@@ -28,7 +29,8 @@ const ServiceData = {
       "title": "Network (Wired | Wireless | Mobile) Assessment | Audit with Optimization",
       "desc": "We offer thorough network assessment, audit, and optimization services for wired, wireless, and mobile networks. Our expert team will evaluate your existing infrastructure, identify performance bottlenecks, and provide recommendations for improvement. Whether you're looking to optimize your current setup or ensure your network is scalable and secure, we provide tailored solutions to meet your business needs.",
       "fullDesc": "Our Network Assessment, Audit, and Optimization services focus on evaluating your network's performance across wired, wireless, and mobile platforms. We conduct in-depth assessments to identify any inefficiencies, security gaps, or potential vulnerabilities. Our team provides actionable insights and strategies for optimizing network performance, improving scalability, and enhancing security. We also provide recommendations for future-proofing your network infrastructure, ensuring it evolves with your business. Our approach helps minimize downtime, increase network reliability, and optimize overall performance.",
-      "img": "/service1.jpg",
+      "img": "/network-assessment.jpg",
+      // "img": "/service1.jpg",
       "price": 149,
       "features": [
         "Comprehensive network audits (wired, wireless, mobile)",
@@ -53,7 +55,8 @@ const ServiceData = {
       "title": "Transform to Sustainable IT Infrastructure",
       "desc": "Our service helps businesses transform their IT infrastructure into a more sustainable, energy-efficient system. We focus on reducing environmental impact while improving performance, scalability, and long-term cost-efficiency. With strategic planning and sustainable technology choices, we help your business reduce its carbon footprint and operational expenses.",
       "fullDesc": "We specialize in helping businesses transition to sustainable IT infrastructures that are energy-efficient, cost-effective, and environmentally responsible. Our team evaluates your existing IT assets and creates a tailored transformation plan, incorporating renewable energy sources, virtualization, and efficient hardware solutions. We focus on reducing energy consumption, optimizing resource utilization, and ensuring scalability for future growth. This transformation not only benefits the environment but also results in long-term savings for your business while improving performance and reliability.",
-      "img": "/service2.jpg",
+      "img": "/sustainable-IT.jpg",
+      // "img": "/service2.jpg",
       "price": 149,
       "features": [
         "Assessment of current IT infrastructure sustainability",
@@ -78,7 +81,8 @@ const ServiceData = {
       "title": "Secure Digital Transformation through Process Automation",
       "desc": "We help businesses digitally transform by automating key processes with a strong focus on security. Our services allow you to streamline workflows, enhance efficiency, and reduce human error, while ensuring data protection and compliance with industry standards.",
       "fullDesc": "Our Secure Digital Transformation services leverage process automation to drive business efficiency and security. By automating routine tasks and critical processes, we reduce manual effort, increase operational efficiency, and minimize human error. We incorporate advanced security measures throughout the automation journey, ensuring that all data is protected, and systems are compliant with the latest standards and regulations. Our approach enables businesses to adopt digital solutions confidently, optimizing both operational performance and security.",
-      "img": "/service3.jpg",
+      "img": "/secure-digital.jpg",
+      // "img": "/service3.jpg",
       "price": 149,
       "features": [
         "End-to-end process automation solutions",
@@ -103,7 +107,8 @@ const ServiceData = {
       "title": "Secure AI Insertion for Network Transformation",
       "desc": "We integrate AI-powered solutions into your network infrastructure to enhance performance, security, and automation. By utilizing AI, we can optimize your network’s operations, detect and mitigate threats in real-time, and ensure efficient resource management.",
       "fullDesc": "Our Secure AI Insertion for Network Transformation service integrates cutting-edge AI technologies into your network infrastructure to improve performance and security. AI algorithms can predict and prevent potential issues, automatically optimize network traffic, and enhance threat detection and mitigation. This allows for a more agile, responsive network that can adapt to changing conditions in real time. We ensure that AI solutions are securely implemented, protecting your data and ensuring compliance with all security standards while improving operational efficiency.",
-      "img": "/service4.jpg",
+      "img": "/AI-insertion.jpg",
+      // "img": "/service4.jpg",
       "price": 149,
       "features": [
         "AI-driven network optimization and performance management",
