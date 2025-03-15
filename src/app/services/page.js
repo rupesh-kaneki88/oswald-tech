@@ -96,8 +96,8 @@ const Services = () => {
             loop
             preload='auto'
           >
-            <source src="/Service-new-vid.webm" type="video/webm" />
-            <source src="/Service-new-vid.mp4" type="video/mp4" />
+            <source src="/Services-page.webm" type="video/webm" />
+            <source src="/Services-page.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </motion.video>
         </motion.div>
