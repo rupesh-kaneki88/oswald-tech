@@ -36,10 +36,10 @@ const ScrollableDetails = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 lg:gap-22 md:gap-14 lg:mx-20 md:mx-10 sm:mx-5 ">
                 {/* fixed column */}
                 <div className="justify-center items-center flex flex-col text-wrap sticky top-0 max-h-screen lg:p-4">
-                    <h2 className="text-6xl text-gray-900 mb-2 font-nunito font-light">
+                    <h2 className="lg:text-6xl text-3xl text-gray-900 mb-2 font-nunito font-light">
                         Leveraging technology to address real-world challenges.
                     </h2>
-                    <p className="text-gray-600 font-nunito text-lg my-8">
+                    <p className="font-light text-gray-900 font-nunito text-lg md:text-2xl my-8">
                         We specialize in delivering innovative IT solutions that drive business growth and ensure security. 
                         Our services are designed to streamline operations, strengthen security, and simplify technology management. 
                         We provide customized solutions that equip your business with the right technology to achieve success.
@@ -81,7 +81,7 @@ const ScrollableDetails = () => {
                             <h3 className="text-2xl font-normal font-nunito mb-4 leading-tight">
                                 {card.title}
                             </h3>
-                            <div className="absolute bottom-[1px] left-0 w-0 h-[2px] bg-yellow-400 transition-all duration-400 ease-out group-hover:w-full" />
+                            <div className="absolute  left-0 w-0 h-[2px] bg-yellow-400 transition-all duration-400 ease-out group-hover:w-full" />
                             <div className="overflow-hidden">
                                 <p 
                                     className="text-md lg:text-lg text-gray-200 font-nunito transform translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out mt-24"

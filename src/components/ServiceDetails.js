@@ -323,27 +323,25 @@ export default function ServiceDetails({ serviceId }) {
           </Link>
         </div>
 
-        <div className="absolute inset-0 flex items-center justify-center px-4 md:px-16">
+        <div className="absolute inset-0 flex items-center justify-center px-4 md:px-16 md:ml-14 max-w-7xl">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-left max-w-4xl"
+            className="text-left p-2 md:p-8 lg:p-16"
           >
             <h1 
-              className="text-2xl md:text-6xl font-bold text-white mb-6 mt-8"
-              style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)' }}
+              className="text-3xl md:text-4xl lg:text-6xl font-base text-white mb-6"
             >
               {service.title}
             </h1>
             <p 
-              className="text-l md:text-2xl text-white/90 max-w-3xl mb-8"
-              style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)' }}    
+              className="text-l md:text-2xl font-thin text-white max-w-3xl"
             >
               {service.desc}
             </p>
             
-            <motion.button
+            {/* <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => scrollToSection(overviewRef)}
@@ -351,7 +349,7 @@ export default function ServiceDetails({ serviceId }) {
                       hover:bg-blue-50 transition-colors shadow-lg"
             >
               Learn More
-            </motion.button>
+            </motion.button> */}
           </motion.div>
         </div>
         
@@ -387,7 +385,7 @@ export default function ServiceDetails({ serviceId }) {
               </div>
               
               <motion.p 
-                className="text-gray-700 text-lg leading-relaxed mb-8 pl-16"
+                className="text-gray-900 text-lg leading-relaxed mb-8 pl-16"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}

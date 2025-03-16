@@ -128,7 +128,7 @@ const About = () => {
                 <h2 className="lg:text-6xl text-3xl text-gray-900 mb-2 font-nunito font-light">
                     Driving Innovation Across Wired, Wireless, and Mobile Ecosystems.
                 </h2>
-                <p className="text-gray-600 font-nunito text-lg my-8">
+                <p className="font-light text-gray-900 font-nunito text-lg md:text-2xl my-8">
                 With extensive experience across multiple domains, we offer customized solutions for on-prem, hybrid, and cloud environments. 
                 Our proven track record in implementing AI-augmented digital technologies ensures that we deliver solutions that are not only innovative but also cost-effective, meeting your unique needs and fitting within your budget.
                 </p>
