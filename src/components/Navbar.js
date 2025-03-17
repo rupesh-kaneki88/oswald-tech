@@ -34,18 +34,19 @@ function Navbar() {
 
   return (
     <nav className="sticky top-0 w-full z-50 bg-transparent font-nunito">
-      <div className="max-w-[1400px] mx-auto px-8 lg:px-16">
+      <div className="max-w-[1400px] mx-auto px-8 lg:px-28">
         <div className="flex justify-between items-center py-6">
           {/* Logo */}
           <motion.a
             href="/"
-            className="text-white text-3xl font-bold font-nunito"
+            className="text-white text-3xl font-bold tracking-wider"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             aria-label="Home"
           >
-            Get2AI
+            GET2AI <span className='font-light text-sm -mt-2'><p> Information Technology</p> </span>
           </motion.a>
+          
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex gap-8">

@@ -30,8 +30,8 @@ const TeamSection = () => {
     <section className="py-16 bg-gray-50 w-full">
       <div className="container mx-auto px-4 md:px-16 lg:px-28">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-light text-gray-900 mb-4">Our Leadership</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <h2 className="text-4xl md:text-6xl font-regular text-gray-900 mb-4">Our Leadership</h2>
+          <p className="md:text-2xl text-xl text-gray-500 font-light max-w-3xl mx-auto">
             Meet the dedicated professionals driving innovation and excellence at Get2AI Technologies.
           </p>
         </div>
@@ -59,7 +59,7 @@ const TeamSection = () => {
                   />
                 </div>
                 <p className="mt-3 text-center font-medium opacity-0 transform translate-y-full group-hover:opacity-100 group-hover:translate-y-0 transition-transform duration-500 ease-out">{member.name}</p>
-                <p className="mt-1 text-center font-thin opacity-0 transform translate-y-full group-hover:opacity-100 group-hover:translate-y-0 transition-transform duration-500 ease-out">{member.position}</p>
+                <p className="mt-1 text-center font-extralight opacity-0 transform translate-y-full group-hover:opacity-100 group-hover:translate-y-0 transition-transform duration-500 ease-out">{member.position}</p>
               </motion.div>
             ))}
           </div>

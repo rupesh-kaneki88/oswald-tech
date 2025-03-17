@@ -59,7 +59,7 @@ const PrivacyLegal = () => {
               <h2 className="text-3xl md:text-4xl lg:text-6xl font-base text-white mb-6">
                 Privacy Policy & Terms of Service
               </h2>
-              <p className="text-l md:text-2xl font-thin text-white max-w-3xl">
+              <p className="text-l md:text-2xl font-extralight text-white max-w-3xl">
                 Our commitment to transparency and protecting your information.
               </p>
             </motion.div>

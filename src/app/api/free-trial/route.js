@@ -33,7 +33,7 @@ export async function POST(request) {
       subject: `New Free Trial Form Submission from ${name}`,
       replyTo: email,
       html: `
-        <h1>New Payment Form Submission</h1>
+        <h1>New Free Trial Form Submission</h1>
         <p><strong>Name:</strong> ${name}</p>
         <p><strong>Email:</strong> ${email}</p>
         ${mobile ? `<p><strong>Mobile:</strong> ${mobile}</p>` : ''}

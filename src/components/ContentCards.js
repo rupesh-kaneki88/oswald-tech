@@ -60,9 +60,9 @@ const ContentCards = () => {
       <div className="max-w-[1400px] mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
           {cards.map((card, index) => (
+          <Link href={card.link} passHref key={index}>
             <motion.div
-              key={index}
-              className="group relative h-[480px] overflow-hidden rounded-lg cursor-pointer"
+              className="group relative h-[480px] overflow-hidden cursor-pointer"
               whileHover="hover"
               initial="initial"
               variants={{
@@ -84,7 +84,7 @@ const ContentCards = () => {
               <div className="absolute inset-0 bg-black/40 transition-opacity duration-300 group-hover:bg-black/50" />
               
               {/* Content */}
-              <div className="relative h-full p-8 flex flex-col justify-between text-white z-10">
+              <div className="relative h-full p-8 -mt-4 flex flex-col justify-between text-white z-10">
                 {/* Top Content */}
                 <div>
                   <div className="flex items-center gap-2 mb-4">
@@ -94,12 +94,11 @@ const ContentCards = () => {
                   <h3 className="text-2xl font-light mb-4 leading-tight">
                     {card.title}
                   </h3>
-                  <p className="text-sm text-gray-200 transform opacity-0 translate-x-full group-hover:opacity-100 group-hover:translate-x-0 transition-transform duration-300 ease-out">
+                  <p className="text-sm font-light text-gray-100 transform opacity-0 translate-x-full group-hover:opacity-100 group-hover:translate-x-0 transition-transform duration-300 ease-out">
                     {card.description}
                   </p>
                 </div>
                 
-                <Link href={card.link} passHref>
                   {/* Action Link */}
                   <motion.div
                     className="inline-flex items-center gap-2"
@@ -117,9 +116,9 @@ const ContentCards = () => {
                     </motion.span>
                   </motion.div>
                 
-                </Link>
               </div>
             </motion.div>
+            </Link>
           ))}
         </div>
       </div>

@@ -68,7 +68,7 @@ const Contact = () => {
       
       {/* Hero Image Section - 60vh */}
 
-        <div className="relative h-[75vh] w-full bg-white overflow-hidden font-nunito">
+        <div className="relative h-[65vh] w-full bg-white overflow-hidden font-nunito">
             <img 
             src="/contact-hero.jpg" 
             alt="Contact Osvan Technologies" 
@@ -79,7 +79,7 @@ const Contact = () => {
             <div className="absolute inset-0 bg-black/30" />
     
             <div className="absolute inset-0 px-4 md:px-16 lg:px-28 z-10">
-                <div className="absolute top-16 left-0 w-full px-4 md:px-16">
+                <div className="absolute top-16 left-0 w-full px-4 md:px-36">
                 <hr className="border-t-2 border-gray-300 my-4" />
                 </div>
     
@@ -90,13 +90,13 @@ const Contact = () => {
                     transition={{ duration: 0.8, delay: 0.5 }}
                     className="text-left p-4 md:p-8 lg:p-16"
                 >
-                    <h1 className="text-xs md:text-base lg:text-base font-semibold text-white lg:mb-4">
+                    <h1 className="text-xs md:text-base lg:text-base tracking-wider font-semibold text-white lg:mb-4">
                       CONTACT
                     </h1>
                     <h2 className="text-3xl md:text-4xl lg:text-6xl font-base text-white mb-6">
                         Get2AI Technologies
                     </h2>
-                    <p className="text-l md:text-2xl font-thin text-white max-w-3xl">
+                    <p className="text-l md:text-2xl font-extralight text-white max-w-3xl">
                         Reach Out and Transform Your Business with us.          
                     </p>
                 </motion.div>
@@ -114,7 +114,7 @@ const Contact = () => {
             className="group relative bg-white  overflow-hidden mx-4 md:mx-16 lg:mx-28 my-12 -mt-20"
             >
                     <div className='flex flex-col md:flex-row bg-white font-nunito justify-center p-4 lg:p-8 '>
-                        <p className='text-lg md:text-2xl font-base text-gray-700  text-center mx-8 mt-4 lg:mx-44'>
+                        <p className='text-lg md:text-[1.75rem] leading-tight font-light text-gray-700  text-center mx-8 mt-4 lg:mx-44'>
                             Have questions or need assistance? Fill out the form below and our team will get back to you shortly.
                             
                         </p>
@@ -130,7 +130,7 @@ const Contact = () => {
                             </div>
                         )}
 
-                        <form onSubmit={handleSubmit} className="space-y-6">
+                        <form onSubmit={handleSubmit} className="space-y-6 text-xl">
                             {/* Name Input */}
                             <div className="relative">
                             <input
@@ -192,7 +192,7 @@ const Contact = () => {
                                   type="submit"
                                   // disabled={true}
                                   disabled={isSubmitting}
-                                  className="text-gray-800 border-b-2  hover:border-gray-800 uppercase tracking-wider font-medium py-2 px-4 transition duration-300 ease-in-out disabled:text-gray-400"
+                                  className="text-gray-800 border-b-2 text-lg hover:border-gray-800 uppercase tracking-wider font-medium py-2 px-4 transition duration-300 ease-in-out disabled:text-gray-400"
                               >
                                   {isSubmitting ? 'Sending...' : 'Send Message'}
                               </button>
@@ -215,7 +215,7 @@ const Contact = () => {
                 {/* Headquarters */}
                 <div className="flex flex-col h-full ">
                 <h3 className="text-2xl font-semibold font-nunito mb-4 text-gray-800">Headquarters</h3>
-                <div className="bg-gray-50 p-6 rounded-lg flex-grow">
+                <div className="bg-gray-50 p-6 rounded-lg flex-grow text-lg">
                     <div className="flex items-start mb-4">
                     <MapPin className="mr-4 text-blue-600 flex-shrink-0 mt-1" />
                     <p className="text-gray-700">
@@ -245,7 +245,7 @@ const Contact = () => {
                 {/* Business Hours */}
                 <div className="flex flex-col h-full">
                 <h3 className="text-2xl font-semibold font-nunito mb-4 text-gray-800">Business Hours</h3>
-                <div className="bg-gray-50 p-6 rounded-lg flex-grow">
+                <div className="bg-gray-50 p-6 rounded-lg flex-grow text-lg">
                     <div className="grid grid-cols-2 gap-2">
                     <div className="text-gray-600">Monday - Friday:</div>
                     <div className="text-gray-800">9:00 AM - 5:00 PM</div>

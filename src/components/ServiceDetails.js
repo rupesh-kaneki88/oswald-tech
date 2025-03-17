@@ -292,7 +292,7 @@ export default function ServiceDetails({ serviceId }) {
       </AnimatePresence> */}
 
       {/* Hero Section with Parallax Effect */}
-      <div className="relative h-[100vh] lg:h-[75vh] w-full overflow-hidden">
+      <div className="relative h-[65vh] lg:h-[65vh] w-full overflow-hidden">
         <motion.div
           initial={{ scale: 1.1 }}
           animate={{ scale: 1 }}
@@ -336,7 +336,7 @@ export default function ServiceDetails({ serviceId }) {
               {service.title}
             </h1>
             <p 
-              className="text-l md:text-2xl font-thin text-white max-w-3xl"
+              className="text-l md:text-2xl font-extralight text-gray-200  max-w-3xl"
             >
               {service.desc}
             </p>
@@ -385,7 +385,7 @@ export default function ServiceDetails({ serviceId }) {
               </div>
               
               <motion.p 
-                className="text-gray-900 text-lg leading-relaxed mb-8 pl-16"
+                className="text-gray-800 text-xl font-light leading-relaxed mb-8 pl-16"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}

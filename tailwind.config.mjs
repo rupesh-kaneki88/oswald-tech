@@ -23,6 +23,18 @@ export default {
       fontFamily: {
         'nunito': ['Nunito Sans', 'sans-serif'],
       },
+      fontFamily: {
+        'visuelt': ['VisueltPro', 'sans-serif'], // Add custom VisueltPro font family
+      },
+      fontWeight: {
+        thin: 100,
+        extralight: 200,
+        light: 300,
+        regular: 400,
+        medium: 500,
+        bold: 700,
+        black: 900,
+      },
     },
   },
   plugins: [],

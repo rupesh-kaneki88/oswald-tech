@@ -41,9 +41,11 @@ const ServiceCard = ({ service, index }) => {
   
           {/* Content */}
           <div className="lg:w-1/2 p-8 lg:p-12 flex flex-col justify-center">
-            <h2 className="text-2xl lg:text-3xl font-semibold mb-4 flex items-center gap-2 group-hover:text-blue-600 transition-colors duration-300">
-              {service.title}
-            </h2>
+            <Link href={`/services/${service.id}`} passHref>
+              <h2 className="text-2xl lg:text-3xl font-semibold mb-4 flex items-center gap-2 group-hover:text-blue-600 transition-colors duration-300">
+                {service.title}
+              </h2>
+            </Link>
             {/* <p className="text-gray-600 text-lg leading-relaxed">
               {service.desc.split('.')[0] + '.'}
             </p> */}
@@ -54,7 +56,7 @@ const ServiceCard = ({ service, index }) => {
                 whileTap={{ scale: 0.98 }}
                 className=" py-3 hover:bg-transparent transition-colors relative overflow-hidden group"
               >
-                <span className="relative z-10 text-2xl font-thin font-nunito">Explore Service</span>
+                <span className="relative z-10 text-2xl font-extralight font-nunito">Explore Service</span>
                 <div className="absolute bottom-[8px] left-0 w-0 h-[2px] bg-yellow-400 mx-0 transition-all duration-300 ease-out group-hover:w-full" />
 
               </motion.button>
@@ -77,7 +79,7 @@ const Services = () => {
   return (
     <>
 
-      <div className="relative h-[75vh] w-full bg-white overflow-hidden">
+      <div className="relative h-[65vh] w-full bg-white overflow-hidden">
         <motion.div
           className="absolute top-0 left-0 w-full h-full bg-black" // Ensure black background
           initial={{ opacity: 0 }}
@@ -106,7 +108,7 @@ const Services = () => {
         <div className="absolute inset-0 bg-black/30" />
 
         <div className="absolute inset-0 px-4 md:px-16 lg:px-28">
-          <div className="absolute top-16 left-0 w-full px-4 md:px-16">
+          <div className="absolute top-16 left-0 w-full px-4 md:px-36">
             <hr className="border-t-2 border-gray-300 my-4" />
           </div>
 
@@ -117,13 +119,13 @@ const Services = () => {
               transition={{ duration: 0.8, delay: 0.5 }}
               className="text-left p-4 md:p-8 lg:p-16 mt-32"
             >
-              <h1 className="text-xs md:text-base lg:text-base font-semibold text-white lg:mb-4">
+              <h1 className="text-xs md:text-base lg:text-base font-semibold tracking-wider text-white lg:mb-4">
                 SERVICES
               </h1>
               <h2 className="text-3xl md:text-4xl lg:text-6xl font-base text-white mb-6">
                 Empowering Your Business with Comprehensive IT Solutions
               </h2>
-              <p className="text-l md:text-2xl font-thin text-white max-w-3xl">
+              <p className="text-l md:text-2xl font-extralight text-white max-w-3xl">
                 We provide essential services to optimize your technology, from network support and cloud services to security and IT consulting, ensuring your systems run efficiently and securely.
               </p>
             </motion.div>

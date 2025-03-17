@@ -10,7 +10,7 @@ const ScrollableDetails = () => {
           title: 'Complete IT Solutions',
           description: 'We offer customized IT solutions for small to mid-sized businesses, leveraging our expertise in operating systems, network security, cloud services, software development, and databases to provide top-tier technology support.',
           action: 'Try service',
-          bgImage: './IT-service1.jpg'
+          bgImage: '/bulb.jpg'
         },
         {
         //   type: 'VIDEO',
@@ -18,7 +18,7 @@ const ScrollableDetails = () => {
           title: 'Optimize IT Budgets',
           description: 'Is your IT budget mainly spent on maintenance? Many businesses struggle with upkeep costs, leaving little for new technology. Outsourcing your IT management to us can cut costs and help you focus on business growth.',
           action: 'Try service',
-          bgImage: './IT-service2.jpg'
+          bgImage: '/budget.jpg'
         },
         {
         //   type: 'RESEARCH REPORT',
@@ -26,7 +26,7 @@ const ScrollableDetails = () => {
           title: `Strategic IT Planning`,
           description: 'Technology is always changing, and we’re here to keep you ahead. We’ll help with strategic IT planning to ensure your infrastructure supports your business’s growth and future tech needs.',
           action: 'Try service',
-          bgImage: './IT-service3.jpg'
+          bgImage: '/planning.jpg'
         },
         
       ];

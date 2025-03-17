@@ -28,17 +28,28 @@ const News = () => {
 
   return(
     <>
-        <div className="relative h-[75vh] w-full bg-white overflow-hidden font-nunito">
-            <img 
-            src="/About3.jpg" 
-            alt="News Get2AI Technologies" 
-            className="absolute top-0 left-0 w-full h-full object-cover"
-            />
+        <div className="relative h-[65vh] w-full bg-white overflow-hidden font-nunito">
+            <motion.video
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                className="absolute top-0 left-0 w-full h-full object-cover"
+                autoPlay
+                muted
+                playsInline
+                loop
+                transition={{ duration: 1 }}  // Add this from Services
+                preload='auto'
+            >
+                <source src="/news-hero.webm" type="video/webm" />
+                <source src="/news-hero.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+            </motion.video>
+              
             <Navbar />
             <div className="absolute inset-0 bg-black/30" />
 
              <div className="absolute inset-0 px-4 md:px-16 lg:px-28 z-10">
-                <div className="absolute top-16 left-0 w-full px-4 md:px-16">
+                <div className="absolute top-16 left-0 w-full px-4 md:px-36">
                 <hr className="border-t-2 border-gray-300 my-4" />
                 </div>
     
@@ -49,13 +60,13 @@ const News = () => {
                     transition={{ duration: 0.8, delay: 0.5 }}
                     className="text-left p-4 md:p-8 lg:p-16"
                 >
-                    <h1 className="text-xs md:text-base lg:text-base font-semibold text-white lg:mb-4">
+                    <h1 className="text-xs md:text-base lg:text-base font-semibold text-white tracking-wider lg:mb-4">
                         NEWS
                     </h1>
                     <h2 className="text-3xl md:text-4xl lg:text-6xl font-base text-white mb-6">
                         Get2AI Technologies
                     </h2>
-                    <p className="text-l md:text-2xl font-thin text-white max-w-3xl">
+                    <p className="text-l md:text-2xl font-extralight text-white max-w-3xl">
                         Making the mission, making headlines.          
                     </p>
                 </motion.div>
@@ -72,7 +83,7 @@ const News = () => {
         className="group relative bg-white  overflow-hidden mx-4 md:mx-16 lg:mx-28 my-12 -mt-20"
         >
             <div className='flex flex-col md:flex-row bg-white font-nunito justify-center p-4 lg:p-8 '>
-                <p className='text-lg md:text-2xl font-base text-gray-700  text-center mx-8 mt-4 lg:mx-44'>
+                <p className='text-lg md:text-[1.75rem] font-light text-gray-700  text-center mx-8 mt-4 lg:mx-44 leading-tight'>
                 Welcome to our News and Updates section! Stay tuned for the latest announcements, innovations, and progress from Get2AI Technologies. Our goal is to keep you informed about the exciting developments in the tech world, particularly in network optimization, digital transformation, and cutting-edge AI technologies.
                 </p>
             </div>
@@ -135,7 +146,7 @@ const News = () => {
                         viewport={{ once: true }}
                         className="bg-white p-6 "
                     >
-                        <p className='text-lg md:text-3xl font-light text-gray-900  text-left  mt-48 '>
+                        <p className='text-lg md:text-2xl font-light text-gray-900  text-left  mt-48 '>
                         We are currently preparing new updates, and more exciting news will be uploaded soon! We are working on providing insightful articles and company news to keep you ahead in the world of technology. Stay tuned for exclusive announcements regarding our new service offerings, upcoming events, and achievements.                        </p>
                     </motion.div>
                 </div>

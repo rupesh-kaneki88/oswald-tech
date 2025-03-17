@@ -4,7 +4,7 @@ const ServiceData = {
       "title": "On-Demand Digital Network Consultancy Services from Certified Experts",
       "desc": "Our on-demand consultancy services offer businesses access to certified network experts who can provide guidance on network design, security, optimization, and troubleshooting. We offer flexible support, tailored to your unique needs, ensuring your network infrastructure is robust and efficient.",
       "fullDesc": "We offer flexible on-demand technical expertise that suits your needs and billed on a low cost per hour basis with No long term contracts. Our approach is to make our Customers achieve their Business Goals and build Trust on a on-going basis",
-      "img": "/on-demand.jpg",
+      "img": "/consultancy.jpg",
       // "img": "/service5.jpg",
       "price": 149.99,
       "features": [

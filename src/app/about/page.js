@@ -21,7 +21,7 @@ const About = () => {
           title: 'Team',
           description: "Our team consists of passionate and skilled professionals dedicated to delivering exceptional service. With expertise in project management, web development, software development, digital marketing, and beyond, we work collaboratively to provide innovative solutions that drive success for our clients.",
           action: 'Try service',
-          bgImage: './About1.jpg'
+          bgImage: '/bees.jpg'
         },
         {
         //   type: 'VIDEO',
@@ -29,7 +29,7 @@ const About = () => {
           title: 'Approach',
           description: "We take a customer-centric approach in everything we do. By working closely with our clients to understand their unique needs and goals, we develop tailored solutions that drive success. Our commitment is to deliver results that not only meet but exceed our client's expectations.",
           action: 'Try service',
-          bgImage: './About2.jpg'
+          bgImage: '/map.jpg'
         },
         {
         //   type: 'RESEARCH REPORT',
@@ -37,7 +37,7 @@ const About = () => {
           title: `Vision`,
           description: 'We strive to be a trusted leader in delivering innovative and dependable IT solutions that empower businesses to succeed in an increasingly digital world. We aim to help our clients achieve long-term success by offering cutting-edge technology and exceptional service. Through strong partnerships and a relentless pursuit of excellence, we aspire to be the trusted choice for businesses looking to leverage technology for growth and transformation.',
           action: 'Try service',
-          bgImage: './About3.jpg'
+          bgImage: '/lighthouse.jpg'
         },
         {
         //   type: 'RESEARCH REPORT',
@@ -45,14 +45,14 @@ const About = () => {
             title: `Mission`,
             description: 'Our mission is to provide businesses with innovative, reliable, and cost-effective IT solutions that drive growth, enhance efficiency, and ensure security. We are committed to delivering exceptional service, fostering long-term relationships, and helping our clients navigate the digital landscape with confidence. By leveraging our expertise and customer-centric approach, we aim to make technology an enabler for businesses to achieve their goals and thrive in a fast-paced world.',
             action: 'Try service',
-            bgImage: './About4.jpg'
+            bgImage: '/archer.jpg'
         },
         
       ];
 
     return(
         <>
-        <div className="relative h-[75vh] w-full bg-white overflow-hidden">
+        <div className="relative h-[65vh] w-full bg-white overflow-hidden">
         <motion.video
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -73,24 +73,24 @@ const About = () => {
           <div className="absolute inset-0 bg-black/30" />
   
           <div className="absolute inset-0 px-4 md:px-16 lg:px-28 z-10">
-            <div className="absolute top-16 left-0 w-full px-4 md:px-16">
+            <div className="absolute top-16 left-0 w-full px-4 md:px-36">
               <hr className="border-t-2 border-gray-300 my-4" />
             </div>
   
-            <div className="h-full flex flex-col font-nunito justify-center max-w-5xl">
+            <div className="h-full flex flex-col font-visuelt justify-center max-w-5xl">
               <motion.div
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.5 }}
                 className="text-left p-4 md:p-8 lg:p-16"
               >
-                <h1 className="text-xs md:text-base lg:text-base font-semibold text-white lg:mb-4">
+                <h1 className="text-xs md:text-base lg:text-base font-semibold tracking-wider text-white lg:mb-4">
                   ABOUT
                 </h1>
                 <h2 className="text-3xl md:text-4xl lg:text-6xl font-base text-white mb-6">
                     Get2AI Technologies
                 </h2>
-                <p className="text-l md:text-2xl font-thin text-white max-w-3xl">
+                <p className="text-l md:text-2xl font-extralight text-white max-w-3xl">
                     Empowering Business Goals with Transformative Technology Solutions.                </p>
               </motion.div>
             </div>
@@ -105,8 +105,8 @@ const About = () => {
             transition={{ duration: 1, delay: 0.5 }}
             className="group relative bg-white  overflow-hidden mx-4 md:mx-16 lg:mx-28 my-12 -mt-8"
             >
-            <div className='flex flex-col md:flex-row bg-white font-nunito justify-center p-4 lg:p-8 '>
-                <p className='text-lg md:text-2xl font-base text-gray-700  text-center mx-8 mt-12 lg:mx-44'>
+            <div className='flex flex-col md:flex-row bg-white font-visuelt justify-center p-4 lg:p-8 '>
+                <p className='text-lg md:text-[1.75rem] font-light text-gray-700  text-center mx-8 mt-8 lg:mx-44 leading-tight'>
                     At Get2AI Technologies, we are a service-driven organization dedicated to helping our clients achieve their business goals by leveraging cutting-edge technologies across the wired, wireless, and mobile spaces, including 5G. Our approach is vendor-neutral, focusing on delivering impactful, tailored solutions with the expertise of certified industry professionals.                
                 </p>
             </div>
@@ -115,7 +115,7 @@ const About = () => {
 
         {/* Team details */}
         <div
-            className="bg-transparent mx-4 md:mx-16 lg:mx-16 my-12 -mt-8 font-nunito relative z-10"
+            className="bg-transparent mx-4 md:mx-16 lg:mx-16 my-12 -mt-8 font-visuelt relative z-10"
         >
             <TeamSection/>
         </div>
@@ -125,13 +125,14 @@ const About = () => {
             <div className="flex flex-col lg:flex-row lg:flex-row-reverse gap-14 lg:gap-22 md:mx-10 sm:mx-5">
                 {/* Fixed column */}
                 <div className="justify-center items-center flex flex-col text-wrap lg:sticky top-0 max-h-screen lg:p-4 bg-white">
-                <h2 className="lg:text-6xl text-3xl text-gray-900 mb-2 font-nunito font-light">
+                <h2 className="lg:text-6xl text-4xl text-gray-900 mb-2 font-visuelt font-light">
                     Driving Innovation Across Wired, Wireless, and Mobile Ecosystems.
                 </h2>
-                <p className="font-light text-gray-900 font-nunito text-lg md:text-2xl my-8">
+                <p className="font-light text-gray-900 font-visuelt text-lg md:text-2xl my-8">
                 With extensive experience across multiple domains, we offer customized solutions for on-prem, hybrid, and cloud environments. 
                 Our proven track record in implementing AI-augmented digital technologies ensures that we deliver solutions that are not only innovative but also cost-effective, meeting your unique needs and fitting within your budget.
                 </p>
+
                 </div>
 
                 {/* Scrollable column */}
@@ -162,7 +163,7 @@ const About = () => {
                         {/* Content */}
                         <div className="relative h-full p-8 flex flex-col justify-between text-white z-10">
                             <div className="relative inline-block">
-                                <h3 className="text-2xl font-normal font-nunito mb-4 leading-tight">
+                                <h3 className="text-2xl font-normal font-visuelt mb-4 leading-tight">
                                     {card.title}
                                 </h3>
                             {/* Animated underline */}
@@ -170,7 +171,7 @@ const About = () => {
                         </div>
                         <div className="overflow-hidden">
                             <p 
-                                className="text-md lg:text-lg text-gray-200 font-nunito transform translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out"
+                                className="text-md lg:text-lg text-gray-200 font-visuelt transform translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out"
                             >
                                 {card.description}
                             </p>
@@ -194,8 +195,8 @@ const About = () => {
             height: '300px', // Adjust height as per your requirement
             }}
         >
-           <div className='absolute inset-y-0 left-0 flex flex-col justify-center font-nunito mx-8 sm:mx-16 md:mx-28'>
-                <h2 className='font-thin text-3xl sm:text-4xl md:text-5xl text-white'>
+           <div className='absolute inset-y-0 left-0 flex flex-col justify-center font-visuelt mx-8 sm:mx-16 md:mx-28'>
+                <h2 className='font-extralight text-3xl sm:text-4xl md:text-5xl text-white'>
                     Ready to take the next step?
                 </h2>
 
