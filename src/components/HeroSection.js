@@ -17,7 +17,6 @@ const HeroSection = () => {
     { webm: '/art3.webm', mp4: '/art3.mp4' },
     { webm: '/art4.webm', mp4: '/art3.mp4' },
     { webm: '/art5.webm', mp4: '/art3.mp4' },
-    { webm: '/art6.webm', mp4: '/art6.mp4' },
     { webm: '/art8.webm', mp4: '/art5.mp4' },
   ];
 

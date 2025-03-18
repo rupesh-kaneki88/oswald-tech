@@ -45,7 +45,7 @@ const About = () => {
             title: `Mission`,
             description: 'Our mission is to provide businesses with innovative, reliable, and cost-effective IT solutions that drive growth, enhance efficiency, and ensure security. We are committed to delivering exceptional service, fostering long-term relationships, and helping our clients navigate the digital landscape with confidence. By leveraging our expertise and customer-centric approach, we aim to make technology an enabler for businesses to achieve their goals and thrive in a fast-paced world.',
             action: 'Try service',
-            bgImage: '/archer.jpg'
+            bgImage: '/rocket.jpg'
         },
         
       ];

@@ -31,7 +31,7 @@ const ContentCards = () => {
       title: 'Transform to Sustainable IT infrastructure.',
       description: 'Modernize your IT infrastructure with eco-friendly solutions that enhance efficiency and sustainability.',
       action: 'Explore',
-      bgImage: '/transform.jpg',
+      bgImage: '/IT-infra2.jpg',
       link: '/services/sustainable-it-infrastructure'
     },
     {
