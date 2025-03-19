@@ -528,7 +528,7 @@ export default function ServiceDetails({ serviceId }) {
                               {benefit.includes(':') ? 
                                 benefit.split(':')[1]
                                 .trim()
-                                .split('-')  // Split by the '-' character
+                                .split('->')  // Split by the '-' character
                                 .filter(item => item.trim() !== '')
                                 .map((item, index) => (
                                   <li key={index}>{item.trim()}</li>  // Trim each item to remove any extra spaces

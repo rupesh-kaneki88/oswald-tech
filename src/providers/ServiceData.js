@@ -8,7 +8,7 @@ const ServiceData = {
       // "img": "/service5.jpg",
       "price": 149.99,
       "features": [
-        "access to certified network consultants : Get guidance from experienced and accredited professionals in network design, security, and optimization.",
+        "Access to certified network consultants : Get guidance from experienced and accredited professionals in network design, security, and optimization.",
         "On-Demand Support :  Flexible consultancy services available when you need them, without long-term commitments.",
         "Comprehensive Network Solutions: Assistance with network design, performance optimization, security enhancements, and troubleshooting.",
         "Tailored Services: Custom solutions that align with your business needs, ensuring efficient and scalable network infrastructure.",
@@ -17,29 +17,29 @@ const ServiceData = {
       ],
       "benefits": [
         `Improved Network Efficiency : 
-          - Streamline network architecture for better resource allocation and load balancing.
-          - Implement proactive monitoring to detect and resolve issues before they impact operations.
-          - Optimize bandwidth usage to reduce latency and enhance data transfer speeds.`,
+          -> Streamline network architecture for better resource allocation and load balancing.
+          -> Implement proactive monitoring to detect and resolve issues before they impact operations.
+          -> Optimize bandwidth usage to reduce latency and enhance data transfer speeds.`,
         `Enhanced Security :
-          -Identify and mitigate vulnerabilities through security audits and risk assessments.
-          -Implement robust firewall, encryption, and intrusion prevention measures.
-          -Ensure compliance with industry regulations to safeguard sensitive data.`,
+          ->Identify and mitigate vulnerabilities through security audits and risk assessments.
+          ->Implement robust firewall, encryption, and intrusion prevention measures.
+          ->Ensure compliance with industry regulations to safeguard sensitive data.`,
         `Scalability & Future-Readiness :
-          -Design a network that grows with your business, supporting expansion and new technologies.
-          -Implement cloud based solutions for flexible and scalable infrastructure.
-          -Upgrade outdated systems to improve efficiency and future-proof your network.`,
+          ->Design a network that grows with your business, supporting expansion and new technologies.
+          ->Implement cloud based solutions for flexible and scalable infrastructure.
+          ->Upgrade outdated systems to improve efficiency and future-proof your network.`,
         ` Faster Problem Resolution :
-          - Gain instant access to certified experts for quick diagnosis and troubleshooting.
-          - Reduce downtime with rapid response times and proactive maintenance strategies.
-          - Leverage automation tools to detect and resolve common network issues efficiently.`,
+          ->Gain instant access to certified experts for quick diagnosis and troubleshooting.
+          -> Reduce downtime with rapid response times and proactive maintenance strategies.
+          -> Leverage automation tools to detect and resolve common network issues efficiently.`,
         `Access to Latest Technologies :
-          - Stay updated on emerging trends, and AI driven network management.
-          - Implement cutting edge networking solutions for improved performance and security.
-          - Receive expert recommendations tailored to your business needs and industry standards.`,
+          -> Stay updated on emerging trends, and AI driven network management.
+          -> Implement cutting edge networking solutions for improved performance and security.
+          -> Receive expert recommendations tailored to your business needs and industry standards.`,
         `Reduced IT Costs :
-          - Eliminate the need for a full time in house IT team by leveraging on demand expertise.
-          - Optimize network resources to reduce unnecessary hardware and maintenance expenses.
-          - Pay only for the services you need, ensuring cost effective network management.`
+          -> Eliminate the need for a full time in house IT team by leveraging on demand expertise.
+          -> Optimize network resources to reduce unnecessary hardware and maintenance expenses.
+          -> Pay only for the services you need, ensuring cost effective network management.`
       ]
     },
     "network-assessment-audit-optimization": {
