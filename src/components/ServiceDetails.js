@@ -504,7 +504,7 @@ export default function ServiceDetails({ serviceId }) {
                     >
                       <div className="flex items-center">
                         <Check size={20} className="text-purple-500 mr-3 flex-shrink-0" aria-hidden="true" />
-                        <span className="text-gray-800 font-medium">{benefit}</span>
+                        <span className="text-gray-800 font-medium">{benefit.split(':')[0] || benefit}</span>
                       </div>
                       {expandedBenefit === index ? 
                         <ChevronUp size={20} className="text-gray-500 ml-2 flex-shrink-0" aria-hidden="true" /> : 
@@ -523,11 +523,19 @@ export default function ServiceDetails({ serviceId }) {
                           className="overflow-hidden"
                         >
                           <div className="pt-4 pl-8 text-gray-600">
-                            <p>This benefit provides substantial value by improving your operational efficiency and business outcomes.</p>
+                            {/* <p>This benefit provides substantial value by improving your operational efficiency and business outcomes.</p> */}
                             <ul className="mt-2 list-disc pl-5 space-y-1">
-                              <li>Increases productivity by up to 25%</li>
-                              <li>Reduces operational costs significantly</li>
-                              <li>Improves customer satisfaction ratings</li>
+                              {benefit.includes(':') ? 
+                                benefit.split(':')[1]
+                                .trim()
+                                .split('-')  // Split by the '-' character
+                                .filter(item => item.trim() !== '')
+                                .map((item, index) => (
+                                  <li key={index}>{item.trim()}</li>  // Trim each item to remove any extra spaces
+                                )) 
+                              : 
+                              ''
+                              }
                             </ul>
                           </div>
                         </motion.div>
@@ -603,7 +611,7 @@ export default function ServiceDetails({ serviceId }) {
                 className="w-full py-4 bg-gray-400 text-white rounded-md font-medium
                          hover:bg-gray-600 transition-colors duration-300 shadow-md mb-2"
               >
-                Book your first slot free!
+                Get your first consultation free!
               </motion.button>
 
               {/* <motion.button
@@ -939,7 +947,7 @@ export default function ServiceDetails({ serviceId }) {
                     className="flex-1 py-3 px-4 bg-blue-600 text-white rounded-md hover:bg-blue-700 
                              disabled:bg-blue-400 disabled:cursor-not-allowed font-medium"
                   >
-                    {isLoading ? 'Processing...' : 'Try now!'}
+                    {isLoading ? 'Processing...' : 'Submit'}
                   </motion.button>
                 </div>
               </div>

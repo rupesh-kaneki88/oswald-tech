@@ -8,20 +8,38 @@ const ServiceData = {
       // "img": "/service5.jpg",
       "price": 149.99,
       "features": [
-        "Access to certified network consultants",
-        "Expert advice on network design, security, and optimization",
-        "On-demand support with flexible engagement models",
-        "Tailored solutions to meet your business needs",
-        "Comprehensive network troubleshooting and issue resolution",
-        "Scalability and future-proofing consultation",
-        "Ongoing support and strategic planning"
+        "access to certified network consultants : Get guidance from experienced and accredited professionals in network design, security, and optimization.",
+        "On-Demand Support :  Flexible consultancy services available when you need them, without long-term commitments.",
+        "Comprehensive Network Solutions: Assistance with network design, performance optimization, security enhancements, and troubleshooting.",
+        "Tailored Services: Custom solutions that align with your business needs, ensuring efficient and scalable network infrastructure.",
+        "Security & Compliance Focused: Ensure your network adheres to industry security standards and regulatory compliance.",
+        "Cost-Effective: Pay only for the services you need, reducing overhead costs associated with full-time IT staff.",
       ],
       "benefits": [
-        "Access to top-tier network expertise when needed",
-        "Optimized network infrastructure aligned with business goals",
-        "Enhanced network security and performance",
-        "Reduced downtime and quicker issue resolution",
-        "Flexible support that adapts to business needs"
+        `Improved Network Efficiency : 
+          - Streamline network architecture for better resource allocation and load balancing.
+          - Implement proactive monitoring to detect and resolve issues before they impact operations.
+          - Optimize bandwidth usage to reduce latency and enhance data transfer speeds.`,
+        `Enhanced Security :
+          -Identify and mitigate vulnerabilities through security audits and risk assessments.
+          -Implement robust firewall, encryption, and intrusion prevention measures.
+          -Ensure compliance with industry regulations to safeguard sensitive data.`,
+        `Scalability & Future-Readiness :
+          -Design a network that grows with your business, supporting expansion and new technologies.
+          -Implement cloud based solutions for flexible and scalable infrastructure.
+          -Upgrade outdated systems to improve efficiency and future-proof your network.`,
+        ` Faster Problem Resolution :
+          - Gain instant access to certified experts for quick diagnosis and troubleshooting.
+          - Reduce downtime with rapid response times and proactive maintenance strategies.
+          - Leverage automation tools to detect and resolve common network issues efficiently.`,
+        `Access to Latest Technologies :
+          - Stay updated on emerging trends, and AI driven network management.
+          - Implement cutting edge networking solutions for improved performance and security.
+          - Receive expert recommendations tailored to your business needs and industry standards.`,
+        `Reduced IT Costs :
+          - Eliminate the need for a full time in house IT team by leveraging on demand expertise.
+          - Optimize network resources to reduce unnecessary hardware and maintenance expenses.
+          - Pay only for the services you need, ensuring cost effective network management.`
       ]
     },
     "network-assessment-audit-optimization": {
@@ -107,9 +125,17 @@ const ServiceData = {
       "title": "Secure AI Insertion for Network Transformation",
       "desc": "We integrate AI-powered solutions into your network infrastructure to enhance performance, security, and automation. By utilizing AI, we can optimize your network’s operations, detect and mitigate threats in real-time, and ensure efficient resource management.",
       "fullDesc": "Our Secure AI Insertion for Network Transformation service integrates cutting-edge AI technologies into your network infrastructure to improve performance and security. AI algorithms can predict and prevent potential issues, automatically optimize network traffic, and enhance threat detection and mitigation. This allows for a more agile, responsive network that can adapt to changing conditions in real time. We ensure that AI solutions are securely implemented, protecting your data and ensuring compliance with all security standards while improving operational efficiency.",
-      "img": "/AI-insertion.jpg",
+      "img": "/AI-hand.jpg",
       // "img": "/service4.jpg",
       "price": 149,
+      // "features": [
+      //   "access to certified network consultants",
+      //   "On-Demand Support",
+      //   "Comprehensive Network Solutions",
+      //   "Tailored Services",
+      //   "Security & Compliance Focused",
+      //   "Cost-Effective",
+      // ],
       "features": [
         "AI-driven network optimization and performance management",
         "Real-time threat detection and mitigation with AI",
