@@ -20,7 +20,12 @@ const HeroSection = () => {
     { webm: '/art8.webm', mp4: '/art5.mp4' },
   ];
 
-  const words = ['Challenging', 'Exploring', 'Discovering', 'Innovating'];
+  // const words = ['Challenging', 'Exploring', 'Discovering', 'Innovating'];
+  const words = [
+    'Innovate the Future with Us',
+    'Discover Potential',
+    'Explore Opportunities',
+    'Drive Success and Growth',];
 
   // Preload all videos (hidden in DOM)
   useEffect(() => {
@@ -125,7 +130,7 @@ const HeroSection = () => {
         
         {/* Hero Content */}
         <motion.div 
-          className="h-full flex flex-col justify-center items-center text-white"
+          className="h-full flex flex-col items-center text-white lg:mx-[250px]"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -143,7 +148,7 @@ const HeroSection = () => {
                     animate={{ x: 0 }}
                     exit={{ opacity: 0, x: -100 }}
                     transition={{ duration: 0.3 }}
-                    className="text-4xl md:text-6xl font-normal md:px-12 mt-12 md:mt-8 pb-2 font-visuelt "
+                    className="text-3xl md:text-6xl font-normal max-w-xl mx-auto  lg:mb-8 md:px-12 mt-32 md:mt-24 pb-2 font-visuelt "
                     // className="text-6xl md:text-8xl font-normal md:px-12 pb-2 bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 text-transparent bg-clip-text"
                     style={{ lineHeight: '1' }} // optional, try adjusting line-height
                 >
@@ -152,12 +157,12 @@ const HeroSection = () => {
             </AnimatePresence>
 
             
-            <h1 className="text-4xl md:text-6xl font-normal mb-4 font-nunito md:mx-12">
+            {/* <h1 className="text-4xl md:text-6xl font-normal mb-4 font-nunito md:mx-12">
                Feasible.
-            </h1>
+            </h1> */}
 
             <motion.p 
-              className="text-lg md:text-2xl max-w-xl mx-auto mb-8 md:px-12 font-nunito font-extralight"
+              className="text-lg md:text-2xl max-w-xl mx-auto lg:mb-6 md:px-12 font-nunito font-extralight"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.3 }}
@@ -170,7 +175,7 @@ const HeroSection = () => {
               className=" px-4 md:px-12 py-3 hover:bg-transparent transition-colors relative overflow-hidden group "
             >
               <span className="relative z-10 text-2xl font-extralight font-nunito">Connect With Us</span>
-              <div className="absolute bottom-[8px] left-0 w-0 h-[2px] bg-yellow-400 mx-12 mr-20 transition-all duration-300 ease-out group-hover:w-full" />
+              <div className="absolute bottom-[12px] left-0 w-0 h-[2px] bg-yellow-400 mx-12 mr-24 transition-all duration-300 ease-out group-hover:w-full" />
             </button>
           </div>
         </motion.div>
