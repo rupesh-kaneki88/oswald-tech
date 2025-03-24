@@ -26,7 +26,7 @@ export default function ServiceDetails({ serviceId }) {
   const [scrollProgress, setScrollProgress] = useState(0);
   const [isScrolled, setIsScrolled] = useState(false);
   const [submitStatus, setSubmitStatus] = useState({ success: false, message: '' });
-  
+  const [isConsentChecked, setIsConsentChecked] = useState(false);
   
   // Get the current service or redirect if not found
   const service = ServiceData[serviceId];
@@ -145,11 +145,27 @@ export default function ServiceDetails({ serviceId }) {
   
   const handleFreeTrialSubmit = async () => {
     setIsLoading(true);
-    const name = document.getElementById('name').value;
+    // Get form values directly from DOM
+    const fname = document.getElementById('Fname').value;
+    const lname = document.getElementById('Lname').value;
     const email = document.getElementById('email').value;
+    const countryCode = document.getElementById('countryCode').value;
     const mobile = document.getElementById('mobile').value || '';
-    const organization = document.getElementById('organization').value || '';
-    const serviceTitle = service.title
+    const fullMobile = mobile ? `${countryCode}${mobile}` : '';
+
+    // Get all selected interests
+    const interestCheckboxes = document.querySelectorAll('input[name="interests"]:checked');
+    const interests = Array.from(interestCheckboxes).map(checkbox => checkbox.value).join(', ');
+    
+    // Get message
+    const message = document.getElementById('message').value || '';
+
+    // Check if required interests are selected
+    if (interestCheckboxes.length === 0) {
+      toast.error("Please select at least one interest area.");
+      setIsLoading(false);
+      return;
+    }
     
     try {
       const emailResponse = await fetch('/api/free-trial',{
@@ -158,11 +174,11 @@ export default function ServiceDetails({ serviceId }) {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-          name,
+          name: `${fname} ${lname}`,
           email,
-          mobile,
-          organization,
-          service: serviceTitle,
+          mobile: fullMobile,
+          interests,
+          message,
         })
       })
 
@@ -172,6 +188,19 @@ export default function ServiceDetails({ serviceId }) {
       if (emailResponse.ok) {
         setSubmitStatus({ success: true, message: 'Message sent successfully! We will get back to you soon.' });
         toast.success('Message received successfully, we will get back to you!');
+
+        // Reset form
+        document.getElementById('Fname').value = '';
+        document.getElementById('Lname').value = '';
+        document.getElementById('email').value = '';
+        document.getElementById('mobile').value = '';
+        document.getElementById('message').value = '';
+        document.getElementById('consent').checked = false;
+        document.querySelectorAll('input[name="interests"]:checked').forEach(checkbox => {
+          checkbox.checked = false;
+        });
+        document.getElementById('submitButton').disabled = true;
+        
         setIsLoading(false)
       } else {
         setSubmitStatus({ success: false, message: data.message || 'Something went wrong. Please try again.' });
@@ -186,34 +215,7 @@ export default function ServiceDetails({ serviceId }) {
     }
   };
 
-  const handleCheckAPIclick = async () => {
-    try{
-      const response = await fetch('/api/check-api',{
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          name: 'rupesh',
-          email: 'rupesh@gmail.com',
-          mobile: '8080909098',
-        })
-      })
   
-      const data = await response.json()
-      const {name, email, mobile} = data.body
-  
-      if(response.ok){
-        console.log(`Received data: ${name}`)
-        toast.success(`Received Data: ${name}, ${email}, ${mobile}`)
-      } else {
-        console.log("Did not receive any data.")
-      }
-
-    } catch(error){
-      console.log('Error for check api: ',error)
-    }
-  }
 
   const scrollToSection = (ref) => {
     ref.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -854,9 +856,10 @@ export default function ServiceDetails({ serviceId }) {
               <h3 id="free-trial-modal-title" className="text-xl font-semibold mb-4">Book Your Free Slot!</h3>
               
               <div className="bg-blue-50 p-4 rounded-md mb-6">
-                <div className="flex justify-between text-right mb-2">
-                  <span className="text-gray-600">Service:</span>
-                  <span className="font-medium">{service.title}</span>
+                <div className="flex justify-between text-center mb-2">
+                  {/* <span className="text-gray-600">Service:</span>
+                  <span className="font-medium">{service.title}</span> */}
+                  <span className="text-gray-600 text-lg">"Maximize Performance, Minimum Risks - Let's Discuss!"</span>
                 </div>
                 {/* <div className="flex justify-between">
                   <span className="text-gray-600">Amount:</span>
@@ -866,7 +869,7 @@ export default function ServiceDetails({ serviceId }) {
 
               {/* Contact Details Form */}
               <div className="space-y-4 mb-6">
-                <h4 className="font-medium">Contact Details</h4>
+                {/* <h4 className="font-medium">Contact Details</h4> */}
                 <div className="space-y-3">
                   <motion.div
                     whileHover={{ scale: 1.01 }}
@@ -875,10 +878,24 @@ export default function ServiceDetails({ serviceId }) {
                     {/* <label htmlFor="name" className="text-sm font-medium text-gray-700">Name</label> */}
                     <input
                       type="text"
-                      id="name"
-                      name="name"
+                      id="Fname"
+                      name="Fname"
                       className="w-full bg-transparent border-b-2 border-gray-300 focus:outline-none focus:border-blue-500 transition-all duration-300 px-2 py-3 text-gray-800 placeholder-gray-500"
-                      placeholder="Your name *"
+                      placeholder="First name *"
+                      required
+                    />
+                  </motion.div>
+
+                  <motion.div
+                    whileHover={{ scale: 1.01 }}
+                    className="flex flex-col space-y-2"
+                  >
+                    <input
+                      type="text"
+                      id="Lname"
+                      name="Lname"
+                      className="w-full bg-transparent border-b-2 border-gray-300 focus:outline-none focus:border-blue-500 transition-all duration-300 px-2 py-3 text-gray-800 placeholder-gray-500"
+                      placeholder="Last name *"
                       required
                     />
                   </motion.div>
@@ -898,32 +915,133 @@ export default function ServiceDetails({ serviceId }) {
                     />
                   </motion.div>
 
+                  {/* Mobile with Country Code Dropdown */}
                   <motion.div
                     whileHover={{ scale: 1.01 }}
                     className="flex flex-col space-y-2"
                   >
-                    {/* <label htmlFor="mobile" className="text-sm font-medium text-gray-700">Mobile (Optional)</label> */}
-                    <input
-                      type="tel"
-                      id="mobile"
-                      name="mobile"
-                      className="w-full bg-transparent border-b-2 border-gray-300 focus:outline-none focus:border-blue-500 transition-all duration-300 px-2 py-3 text-gray-800 placeholder-gray-500"
-                      placeholder="Your mobile number"
-                    />
+                    <div className="flex items-center w-full">
+                      <select
+                        id="countryCode"
+                        name="countryCode"
+                        className="bg-transparent border-b-2 border-gray-300 focus:outline-none focus:border-blue-500 transition-all duration-300 px-2 py-3 text-gray-800 mr-2"
+                      >
+                        <option value="+1">+1 (US/CA)</option>
+                        <option value="+44">+44 (UK)</option>
+                        <option value="+91">+91 (IN)</option>
+                        <option value="+61">+61 (AU)</option>
+                        <option value="+49">+49 (DE)</option>
+                        <option value="+33">+33 (FR)</option>
+                        <option value="+86">+86 (CN)</option>
+                        <option value="+81">+81 (JP)</option>
+                        <option value="+7">+7 (RU)</option>
+                        <option value="+55">+55 (BR)</option>
+                        <option value="+52">+52 (MX)</option>
+                        <option value="+65">+65 (SG)</option>
+                        <option value="+971">+971 (AE)</option>
+                        <option value="+27">+27 (ZA)</option>
+                        <option value="+82">+82 (KR)</option>
+                      </select>
+                      <input
+                        type="tel"
+                        id="mobile"
+                        name="mobile"
+                        className="flex-1 bg-transparent border-b-2 border-gray-300 focus:outline-none focus:border-blue-500 transition-all duration-300 px-2 py-3 text-gray-800 placeholder-gray-500"
+                        placeholder="Your mobile number *"
+                        required
+                      />
+                    </div>
                   </motion.div>
 
+                  {/* Interest Areas */}
+                  <div className="mt-6">
+                    <p className="text-sm font-medium text-gray-700 mb-2">Interest area *</p>
+                    <div className="grid grid-cols-1 gap-2">
+                      <div className="flex items-center">
+                        <input
+                          type="checkbox"
+                          id="on-demand-network-consultancy"
+                          name="interests"
+                          value="On Demand Network Consultancy"
+                          className="mr-2"
+                        />
+                        <label htmlFor="on-demand-network-consultancy" className="text-sm text-gray-700">On Demand Network Consultancy</label>
+                      </div>
+                      <div className="flex items-center">
+                        <input
+                          type="checkbox"
+                          id="network-assessment-audit-optimization"
+                          name="interests"
+                          value="Network Assessment Audit Optimization"
+                          className="mr-2"
+                        />
+                        <label htmlFor="network-assessment-audit-optimization" className="text-sm text-gray-700">Network Assessment Audit Optimization</label>
+                      </div>
+                      <div className="flex items-center">
+                        <input
+                          type="checkbox"
+                          id="sustainable-it-infrastructure"
+                          name="interests"
+                          value="Sustainable IT Infrastructure"
+                          className="mr-2"
+                        />
+                        <label htmlFor="network-assessment-audit-optimization" className="text-sm text-gray-700">Sustainable IT Infrastructure</label>
+                      </div>
+                      <div className="flex items-center">
+                        <input
+                          type="checkbox"
+                          id="secure-digital-transformation-process-automation"
+                          name="interests"
+                          value="Secure Digital Transformation Process Automation"
+                          className="mr-2"
+                        />
+                        <label htmlFor="secure-digital-transformation-process-automation" className="text-sm text-gray-700">Secure Digital Transformation Process Automation</label>
+                      </div>
+                      <div className="flex items-center">
+                        <input
+                          type="checkbox"
+                          id="secure-ai-insertion-network-transformation"
+                          name="interests"
+                          value="Secure AI Insertion Network Transformation"
+                          className="mr-2"
+                        />
+                        <label htmlFor="secure-ai-insertion-network-transformation" className="text-sm text-gray-700">Secure AI Insertion Network Transformation</label>
+                      </div>
+                      
+                    </div>
+                  </div>
+                  {/* Message Field */}
                   <motion.div
                     whileHover={{ scale: 1.01 }}
-                    className="flex flex-col space-y-2"
+                    className="flex flex-col space-y-2 mt-4"
                   >
-                    <input
-                      type="text"
-                      id="organization"
-                      name="organization"
-                      className="w-full bg-transparent border-b-2 border-gray-300 focus:outline-none focus:border-blue-500 transition-all duration-300 px-2 py-3 text-gray-800 placeholder-gray-500"
-                      placeholder="Your organization "
-                    />
+                    <textarea
+                      id="message"
+                      name="message"
+                      rows="4"
+                      className="w-full bg-transparent border-2 border-gray-300 focus:outline-none focus:border-blue-500 transition-all duration-300 px-2 py-3 text-gray-800 placeholder-gray-500 rounded"
+                      placeholder="Your message (optional)"
+                    ></textarea>
                   </motion.div>
+
+                  {/* Consent Checkbox */}
+                  <div className="mt-4">
+                    <div className="flex items-start">
+                      <input
+                        type="checkbox"
+                        id="consent"
+                        name="consent"
+                        className="mt-1 mr-2"
+                        checked={isConsentChecked}
+                        onChange={(e) => setIsConsentChecked(e.target.checked)} // Update the state on change          
+                      />
+                      <label htmlFor="consent" className="text-sm text-gray-700">
+                        I agree to the processing of my personal data in accordance with the privacy policy. By submitting this form, I consent to being contacted regarding your services. *
+                      </label>
+                    </div>
+                  </div>
+
+
                 </div>
               </div>
               
@@ -941,9 +1059,10 @@ export default function ServiceDetails({ serviceId }) {
                   
                   <motion.button
                     whileHover={{ scale: 1.02 }}
+                    id="submitButton"
                     whileTap={{ scale: 0.98 }}
                     onClick={handleFreeTrialSubmit}
-                    disabled={isLoading}
+                    disabled={isLoading || !isConsentChecked}
                     className="flex-1 py-3 px-4 bg-blue-600 text-white rounded-md hover:bg-blue-700 
                              disabled:bg-blue-400 disabled:cursor-not-allowed font-medium"
                   >
